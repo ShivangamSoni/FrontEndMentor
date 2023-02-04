@@ -16,7 +16,6 @@
 
 body {
     margin: 0;
-    height: 100vh;
     font-family: "Montserrat";
 }
 
@@ -24,7 +23,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    min-height: 100vh;
+    max-height: 100%;
     background-color: var(--cream);
 }
 
@@ -33,7 +33,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    width: min(600px, 96%);
+    width: min(600px, 92%);
     min-height: 450px;
 
     background-color: var(--white);
@@ -142,4 +142,16 @@ main {
 
 #my-btn:target {
     background-color: red;
+}
+
+/* Mobile Styling */
+@media screen and (max-width: 375px) {
+    .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(0px, 240px) 1fr;
+    }
+
+    .bg {
+        background-image: url("../assets/images/image-product-mobile.jpg");
+    }
 }

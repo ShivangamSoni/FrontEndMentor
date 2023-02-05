@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --whiteA1: hsla(0, 0%, 100%, 0.75);
+    --whiteA2: hsla(0, 0%, 100%, 0.6);
+    --violet: hsl(277, 64%, 61%);
+    --indigo500: hsl(244, 38%, 16%);
+    --indigo900: hsl(233, 47%, 7%);
+
+    font-size: 15px;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    background-color: var(--indigo900);
+    color: var(--white);
+}

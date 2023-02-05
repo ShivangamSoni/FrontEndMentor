@@ -164,3 +164,26 @@ body {
         font-size: 1em;
     }
 }
+
+/* Site Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 15px 0 0;
+
+    color: var(--whiteA2);
+    background-color: var(--indigo500);
+
+    font-size: 14px;
+}
+
+.footer > a {
+    color: var(--violet);
+}
+
+.footer > a:hover {
+    color: var(--white);
+}

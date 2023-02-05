@@ -9,10 +9,41 @@
             sizes="32x32"
             href="./assets/icons/favicon-32x32.png"
         />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Font: Outfit -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/style.css" />
         <title>Frontend Mentor | NFT preview card component</title>
     </head>
     <body>
-        Equilibrium #3429 Our Equilibrium collection promotes balance and calm.
-        0.041 ETH 3 days left Creation of Jules Wyvern
+        <div class="card">
+            <header class="card-header">
+                <div class="header-image">
+                    <img src="./assets/images/equilibrium.jpg" alt="" />
+                </div>
+            </header>
+            <div class="card-body">
+                <h3 class="card-title">Equilibrium #3429</h3>
+                <p class="card-info">
+                    Our Equilibrium collection promotes balance and calm.
+                </p>
+                <div class="card-details">
+                    <span class="details-price">0.041 ETH</span>
+                    <span class="details-time"> 3 days left</span>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <div class="footer-image">
+                    <img src="./assets/images/avatar.png" alt="" />
+                </div>
+                <div class="footer-info">Creation of Jules Wyvern</div>
+            </footer>
+        </div>
     </body>
 </html>

@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --cyan: hsl(178, 100%, 50%);
+    --blue: hsl(215, 51%, 70%);
+    --darkBlue300: hsl(215, 32%, 27%);
+    --darkBlue500: hsl(216, 50%, 16%);
+    --darkBlue700: hsl(217, 54%, 11%);
+
+    font-size: 18px;
+    font-family: Outfit, sans-serif;
+    color: var(--white);
+}
+
+body {
+    display: grid;
+    place-items: center;
+
+    min-height: 100vh;
+    margin: 0;
+
+    background-color: var(--darkBlue700);
+}

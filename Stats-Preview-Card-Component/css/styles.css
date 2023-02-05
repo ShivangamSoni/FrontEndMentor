@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --whiteA1: hsla(0, 0%, 100%, 0.75);
+    --whiteA2: hsla(0, 0%, 100%, 0.6);
+    --violet: hsl(277, 64%, 61%);
+    --indigo500: hsl(244, 38%, 16%);
+    --indigo900: hsl(233, 47%, 7%);
+
+    font-size: 15px;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    background-color: var(--indigo900);
+    color: var(--white);
+}
+
+/* Card */
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "body bg";
+    width: min(1100px, 92%);
+    min-height: 450px;
+    border-radius: 7px;
+    overflow: hidden;
+
+    background-color: var(--indigo500);
+}
+
+/* Card BG */
+.card-bg {
+    grid-area: bg;
+    background-image: url(../assets/images/header-desktop.jpg);
+    background-size: cover;
+    background-position: top left;
+
+    position: relative;
+}
+
+.card-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-color: var(--violet);
+    filter: hue-rotate(-5deg) saturate(180%) contrast(120%) brightness(90%);
+    opacity: 0.5;
+}
+
+/* Card Body */
+.card-body {
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 90%;
+
+    padding: 70px;
+}
+
+/* Card Body Content */
+.card-title,
+.card-info {
+    margin: 0;
+}
+
+.card-title {
+    font-size: 2.25em;
+    margin-bottom: 30px;
+    font-family: Inter, sans-serif;
+}
+
+.card-info {
+    color: var(--whiteA1);
+    font-size: 0.9em;
+    line-height: 2;
+}
+
+.highlight {
+    color: var(--violet);
+}
+
+/* Stats */
+.card-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat {
+    display: grid;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+.stat-value {
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: Inter, sans-serif;
+}
+
+.stat-label {
+    color: var(--whiteA2);
+    font-size: 0.8em;
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 675px) {
+    :root {
+        font-size: 0.85rem;
+    }
+
+    .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px 1fr;
+        grid-template-areas:
+            "bg"
+            "body";
+    }
+
+    .card-bg {
+        background-image: url(../assets/images/header-mobile.jpg);
+    }
+
+    .card-body {
+        width: 100%;
+        padding: 40px;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .card-title {
+        font-size: 2.1em;
+    }
+
+    .card-info {
+        font-size: 1.2em;
+    }
+
+    .card-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .stat-value {
+        font-size: 1.8em;
+    }
+
+    .stat-label {
+        font-size: 1em;
+    }
+}
+
+/* Site Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 15px 0 0;
+
+    color: var(--whiteA2);
+    background-color: var(--indigo500);
+
+    font-size: 14px;
+}
+
+.footer > a {
+    color: var(--violet);
+}
+
+.footer > a:hover {
+    color: var(--white);
+}

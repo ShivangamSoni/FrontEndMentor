@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --gray100: hsl(212, 45%, 89%);
+    --blue300: hsl(220, 15%, 55%);
+    --blue500: hsl(218, 44%, 22%);
+
+    font-size: 15px;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: var(--gray100);
+}

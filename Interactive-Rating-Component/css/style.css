@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --primary: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --grey200: hsl(217, 12%, 63%);
+    --grey300: hsl(216, 12%, 54%);
+    --blue600: hsl(213, 19%, 18%);
+    --blue700: hsl(216, 12%, 8%);
+
+    font-family: "Overpass";
+    font-size: 15px;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--blue700);
+}

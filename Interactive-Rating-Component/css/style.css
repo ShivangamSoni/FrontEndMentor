@@ -85,6 +85,8 @@ button {
 
 .body-info {
     color: var(--grey300);
+    font-size: 1.05rem;
+    line-height: 1.5;
 }
 
 /* Ratting Bar */
@@ -142,4 +144,26 @@ button {
 .btn:focus {
     outline: 2px solid var(--white);
     outline-offset: 2px;
+}
+
+/* Thank You Card */
+.card--thankyou {
+    place-items: center;
+    gap: 40px;
+}
+
+/* Thank You Rating Text */
+.card--thankyou .rating {
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 900vmax;
+
+    color: var(--primary);
+    background-color: var(--blue600);
+}
+
+/* Thank You Body */
+.card--thankyou > .card-body {
+    text-align: center;
+    gap: 10px;
 }

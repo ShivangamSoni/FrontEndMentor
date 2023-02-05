@@ -1,0 +1,191 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+:root {
+    /* Colors */
+    --primary: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --grey200: hsl(217, 12%, 63%);
+    --grey300: hsl(216, 12%, 54%);
+    --blue600: hsl(213, 19%, 18%);
+    --blue700: hsl(216, 12%, 8%);
+
+    font-family: "Overpass";
+    font-size: 15px;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--blue700);
+}
+
+/* Common Button Styling */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    border: none;
+    outline: transparent;
+
+    padding: 15px;
+    border-radius: 900vmax;
+    font-size: 1rem;
+}
+
+/* Card */
+.card {
+    display: grid;
+    gap: 30px;
+
+    padding: 35px;
+    width: min(425px, 92%);
+    border-radius: 25px;
+
+    color: var(--white);
+    background: radial-gradient(
+        circle at 50% 0%,
+        hsl(215, 20%, 17%) 0%,
+        hsl(215, 22%, 15%) 25%,
+        hsl(215, 25%, 14%) 75%,
+        hsl(215, 27%, 12%) 100%
+    );
+}
+
+/* Icon */
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    padding: 15px;
+    border-radius: 900vmax;
+    background-color: var(--blue600);
+}
+
+/* Body*/
+.card-body {
+    display: grid;
+    gap: 30px;
+}
+
+.body-title,
+.body-info {
+    margin: 0;
+}
+
+.body-info {
+    color: var(--grey300);
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Ratting Bar */
+.rating-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rating-btn {
+    width: 15px;
+    height: 15px;
+    padding: 20px;
+
+    color: var(--grey200);
+    background-color: var(--blue600);
+    font-weight: 700;
+
+    transition: all 150ms linear;
+}
+
+.rating-btn:hover {
+    color: var(--white);
+    background-color: var(--grey300);
+}
+
+.rating-btn:focus {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+.rating-btn.selected {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+/* Button */
+.btn {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 900vmax;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+
+    transition: all 150ms linear;
+}
+
+.btn:hover {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+.btn:focus {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+/* Thank You Card */
+.card--thankyou {
+    place-items: center;
+    gap: 40px;
+}
+
+/* Thank You Rating Text */
+.card--thankyou .rating {
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 900vmax;
+
+    color: var(--primary);
+    background-color: var(--blue600);
+}
+
+/* Thank You Body */
+.card--thankyou > .card-body {
+    text-align: center;
+    gap: 10px;
+}
+
+/* Site Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    border-radius: 15px 0 0;
+
+    color: var(--grey200);
+    background-color: var(--blue600);
+
+    font-size: 14px;
+}
+
+.footer a {
+    color: var(--primary);
+}
+
+.footer a:hover {
+    color: var(--white);
+}

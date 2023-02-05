@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/icons/favicon-32x32.png"
+        />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Font: Overpass -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Style -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <!-- Script -->
+        <script src="./scripts/app.js" defer></script>
+        <title>Frontend Mentor | Interactive rating component</title>
+    </head>
+    <body>
+        <div class="card">
+            <div class="card-icon">
+                <img src="./assets/icons/icon-star.svg" alt="" />
+            </div>
+            <div class="card-body">
+                <h1 class="body-title">How did we do?</h1>
+                <p class="body-info">
+                    Please let us know how we did with your support request. All
+                    feedback is appreciated to help us improve our offering!
+                </p>
+                <div class="rating-bar">
+                    <button class="rating-btn">1</button>
+                    <button class="rating-btn">2</button>
+                    <button class="rating-btn">3</button>
+                    <button class="rating-btn">4</button>
+                    <button class="rating-btn">5</button>
+                </div>
+                <button class="btn" id="submit">Submit</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by
+            <a href="https://github.com/ShivangamSoni/" target="_blank"
+                >Shivangam Soni</a
+            >.
+        </footer>
+
+        <template id="thankYou">
+            <div class="card-image">
+                <img src="./assets/images/illustration-thank-you.svg" alt="" />
+            </div>
+            <span class="rating">You selected 4 out of 5</span>
+            <div class="card-body">
+                <h1 class="body-title">Thank You!</h1>
+                <p class="body-info">
+                    We appreciate you taking the time to give a rating. If you
+                    ever need more support, don&apos;t hesitate to get in touch!
+                </p>
+            </div>
+        </template>
+    </body>
+</html>

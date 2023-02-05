@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --cyan: hsl(178, 100%, 50%);
+    --blue: hsl(215, 51%, 70%);
+    --darkBlue300: hsl(215, 32%, 27%);
+    --darkBlue500: hsl(216, 50%, 16%);
+    --darkBlue700: hsl(217, 54%, 11%);
+
+    font-size: 18px;
+    font-family: Outfit, sans-serif;
+    color: var(--white);
+}
+
+body {
+    display: grid;
+    place-items: center;
+
+    min-height: 100vh;
+    margin: 0;
+
+    background-color: var(--darkBlue700);
+}
+
+/* Common Styles */
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:hover,
+a:focus {
+    color: var(--cyan);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: 1px solid transparent;
+}
+
+/* Card */
+.card {
+    display: grid;
+    gap: 20px;
+    width: min(350px, 94%);
+    padding: 20px;
+
+    background-color: var(--darkBlue500);
+    border-radius: 20px;
+}
+
+/* Card Header */
+.header-image {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.image-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    visibility: hidden;
+    opacity: 0;
+
+    background-color: hsla(178, 100%, 50%, 0.5);
+    transition: opacity 200ms linear;
+}
+
+.header-image > img {
+    width: 100%;
+    height: 100%;
+}
+
+.header-image:hover > .image-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Card Body */
+.card-body {
+    display: grid;
+    gap: 20px;
+}
+
+.card-info {
+    margin: 0;
+}
+
+.card-title {
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.card-info {
+    color: var(--blue);
+    font-weight: 300;
+}
+
+/* Card Details */
+.card-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.details-price,
+.details-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details-price {
+    color: var(--cyan);
+}
+
+.details-time {
+    color: var(--blue);
+}
+
+/* Card Footer */
+.card-footer {
+    display: grid;
+    gap: 5px;
+}
+
+.card-footer > hr {
+    width: 100%;
+    border-color: var(--darkBlue300);
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 900vmax;
+    overflow: hidden;
+
+    border: 1px solid var(--white);
+}
+
+.footer-image > img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-info {
+    font-size: 16px;
+    color: var(--blue);
+}
+
+/* Site Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    border-radius: 15px 0 0;
+
+    color: var(--blue);
+    background-color: var(--darkBlue500);
+
+    font-size: 14px;
+}

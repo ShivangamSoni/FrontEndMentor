@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: hsl(31, 77%, 52%);
+    --cyan700: hsl(184, 100%, 22%);
+    --cyan900: hsl(179, 100%, 13%);
+    --white: hsla(0, 0%, 100%, 0.75);
+    --gray: hsl(0, 0%, 95%);
+
+    --family-para: "Lexend Deca", sans-serif;
+    --family-heading: "Big Shoulders Display", cursive;
+
+    font-size: 15px;
+    font-family: var(--family-para);
+    color: var(--white);
+}
+
+body {
+    margin: 0;
+    background-color: var(--gray);
+}

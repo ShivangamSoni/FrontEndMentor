@@ -120,3 +120,26 @@ main {
         grid-auto-rows: 450px;
     }
 }
+
+/* Site Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    border-radius: 15px 0 0;
+
+    color: var(--cyan700);
+    background-color: var(--white);
+
+    font-size: 14px;
+}
+
+.footer a {
+    color: var(--orange);
+}
+
+.footer a:hover,
+.footer a:focus {
+    color: var(--cyan900);
+}

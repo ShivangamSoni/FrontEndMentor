@@ -27,6 +27,7 @@ body {
 main {
     display: grid;
     place-items: center;
+    padding: 50px;
     min-height: 100vh;
 }
 
@@ -78,7 +79,6 @@ main {
 }
 
 .card-info {
-    font-family: var(--family-para);
     line-height: 1.5;
 }
 
@@ -110,4 +110,13 @@ main {
 .card-link:focus {
     background-color: transparent;
     color: var(--gray);
+}
+
+/* Mobile */
+@media screen and (max-width: 920px) {
+    .products {
+        grid-template-columns: repeat(1, 330px);
+        grid-template-rows: 450px;
+        grid-auto-rows: 450px;
+    }
 }

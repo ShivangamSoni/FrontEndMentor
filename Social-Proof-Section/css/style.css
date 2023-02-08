@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --magenta100: hsl(300, 24%, 96%);
+    --magenta300: hsl(303, 10%, 53%);
+    --magenta500: hsl(300, 43%, 22%);
+    --pink: hsl(333, 80%, 67%);
+    --white: hsl(0, 0%, 100%);
+
+    font-size: 15px;
+    font-family: "League Spartan", sans-serif;
+}
+
+body,
+h1,
+h2,
+p,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+main {
+    min-height: 100vh;
+}

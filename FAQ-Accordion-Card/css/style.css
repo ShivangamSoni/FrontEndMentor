@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-violet: hsl(273, 75%, 66%);
+    --bg-blue: hsl(240, 73%, 65%);
+    --text-blue: hsl(238, 29%, 16%);
+    --text-orange: hsl(14, 88%, 65%);
+    --text-dark: hsl(237, 12%, 33%);
+    --text-light: hsl(240, 6%, 50%);
+    --divider: hsl(240, 5%, 91%);
+
+    font-size: 12px;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+p,
+body {
+    margin: 0;
+    padding: 0;
+}

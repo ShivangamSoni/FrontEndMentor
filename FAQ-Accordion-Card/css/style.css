@@ -139,8 +139,13 @@ main {
     transition: transform 500ms linear;
 }
 
-.accordion-btn:hover {
+.accordion-btn:hover,
+.accordion-btn[aria-expanded="true"]:hover {
     color: var(--text-orange);
+}
+
+.accordion-btn:focus-visible {
+    outline: 1px solid var(--text-orange);
 }
 
 .accordion-btn[aria-expanded="true"] {

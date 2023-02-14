@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue50: hsl(210, 46%, 95%);
+    --blue100: hsl(212, 23%, 69%);
+    --blue200: hsl(214, 17%, 51%);
+    --blue400: hsl(217, 19%, 35%);
+
+    font-size: 13px;
+    font-family: "Manrope", sans-serif;
+}
+
+h1,
+p,
+button,
+figure,
+body {
+    margin: 0;
+    padding: 0;
+}

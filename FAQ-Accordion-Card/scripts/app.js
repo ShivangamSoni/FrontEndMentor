@@ -23,9 +23,9 @@ class Accordion {
 
         this.button.setAttribute("aria-expanded", this.open);
         if (this.open) {
-            this.panel.removeAttribute("hidden");
+            this.panel.setAttribute("aria-hidden", "false");
         } else {
-            this.panel.setAttribute("hidden", "");
+            this.panel.setAttribute("aria-hidden", "true");
         }
     }
 }

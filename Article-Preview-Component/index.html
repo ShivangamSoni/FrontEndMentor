@@ -61,7 +61,13 @@
                             </div>
 
                             <div class="article-share">
-                                <button class="share-btn" aria-label="Share">
+                                <button
+                                    class="share-btn"
+                                    aria-label="Share"
+                                    aria-controls="shareMenu"
+                                    aria-haspopup="menu"
+                                    aria-expanded="false"
+                                >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="15"
@@ -74,8 +80,18 @@
                                     </svg>
                                 </button>
 
-                                <div class="share-popup" aria-hidden="false">
-                                    <span class="popup-title">share</span>
+                                <div
+                                    class="share-popup"
+                                    id="shareMenu"
+                                    role="menu"
+                                    aria-labelledby="popupMenuTitle"
+                                    aria-hidden="true"
+                                >
+                                    <span
+                                        class="popup-title"
+                                        id="popupMenuTitle"
+                                        >share</span
+                                    >
                                     <button
                                         class="popup-btn"
                                         aria-label="Share on Facebook"

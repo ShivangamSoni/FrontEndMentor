@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --gray50: hsl(0, 0%, 98%);
+    --gray200: hsl(229, 6%, 66%);
+    --gray400: hsl(234, 12%, 34%);
+
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    color: var(--gray200);
+}
+
+h1,
+h2,
+p,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    background-color: var(--gray50);
+}
+
+/* Feature Section */
+.feature-section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 60px;
+    width: min(1100px, 85%);
+    min-height: 755px;
+    margin-block: 30px;
+}
+
+/* Section Head */
+.section-head {
+    width: min(520px, 100%);
+    margin-inline: auto;
+    text-align: center;
+}
+
+.section-title {
+    margin-block-end: 30px;
+    color: var(--gray400);
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+.section-title b {
+    display: block;
+    font-weight: 600;
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* Column */
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Feature Card */
+.feature {
+    min-height: 250px;
+    padding: 30px;
+
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0 -4px 0 0 var(--edge), 0px 5px 15px 0px rgba(0, 0, 0, 0.1),
+        0px 5px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.feature-title {
+    margin-block-end: 20px;
+    color: var(--gray400);
+}
+
+.feature-info {
+    margin-block-end: 40px;
+    font-size: 0.9rem;
+}
+
+.feature-icon {
+    text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .features {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .col {
+        align-items: stretch;
+    }
+}

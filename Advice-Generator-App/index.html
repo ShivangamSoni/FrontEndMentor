@@ -19,22 +19,17 @@
         />
         <!-- Styles -->
         <link rel="stylesheet" href="./css/styles.css" />
+        <!-- Script -->
+        <script src="./scripts/app.js" defer></script>
         <title>Frontend Mentor | Advice generator app</title>
     </head>
     <body>
         <main>
             <article class="advice">
-                <h1 class="advice-id">Advice #00</h1>
+                <h1 class="advice-id"></h1>
 
-                <blockquote
-                    class="advice-quote"
-                    cite="https://api.adviceslip.com/advice/{#id}"
-                >
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Neque provident itaque et maiores officiis! Eaque
-                        dolore odit sit praesentium vitae.
-                    </p>
+                <blockquote class="advice-quote">
+                    <p></p>
                 </blockquote>
 
                 <picture class="advice-divider">
@@ -53,6 +48,10 @@
                     <img src="./assets/icons/dice.svg" alt="" />
                     <span class="sr-only">Get New Advice</span>
                 </button>
+
+                <div class="loading-spinner active" aria-hidden="true">
+                    <span class="sr-only">Loading...</span>
+                </div>
             </article>
         </main>
     </body>

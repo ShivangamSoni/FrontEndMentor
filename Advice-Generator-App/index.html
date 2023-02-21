@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/icons/favicon-32x32.png"
+        />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Font: Manrope -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/styles.css" />
+        <!-- Script -->
+        <script src="./scripts/app.js" defer></script>
+        <title>Frontend Mentor | Advice generator app</title>
+    </head>
+    <body>
+        <main>
+            <article class="advice">
+                <h1 class="advice-id"></h1>
+
+                <blockquote class="advice-quote">
+                    <p></p>
+                </blockquote>
+
+                <picture class="advice-divider">
+                    <source
+                        media="(max-width: 540px)"
+                        srcset="./assets/images/pattern-divider-mobile.svg"
+                    />
+                    <source
+                        media="(min-width: 540px)"
+                        srcset="./assets/images/pattern-divider-desktop.svg"
+                    />
+                    <img alt="" />
+                </picture>
+
+                <button class="advice-get" title="Get New Advice">
+                    <img src="./assets/icons/dice.svg" alt="" />
+                    <span class="sr-only">Get New Advice</span>
+                </button>
+
+                <div class="loading-spinner active" aria-hidden="true">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </article>
+        </main>
+    </body>
+</html>

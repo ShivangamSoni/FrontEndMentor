@@ -115,3 +115,11 @@ main {
 .advice-get:focus-visible {
     box-shadow: 0 0 30px 0 var(--NeonGreen);
 }
+
+@media screen and (max-width: 540px) {
+    .advice {
+        gap: 30px;
+        padding: 45px 30px;
+        padding-bottom: 65px;
+    }
+}

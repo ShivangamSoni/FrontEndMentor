@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/icons/favicon-32x32.png"
+        />
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/styles.css" />
+        <title>Frontend Mentor | Results summary component</title>
+    </head>
+    <body>
+        <main>
+            <article class="result">
+                <div class="result-final">
+                    <h1 class="final-title">Your Result</h1>
+                    <span class="final-score">
+                        <span class="acquired">76</span>
+                        of 100
+                    </span>
+                    <span class="final-remark">Great</span>
+                    <p class="final-details">
+                        You scored higher than 65% of the people who have taken
+                        these tests.
+                    </p>
+                </div>
+                <div class="result-summary">
+                    <h2 class="summary-title">Summary</h2>
+                    <ul class="summary-criteria">
+                        <li class="criteria" style="--color: var(--lightRed)">
+                            <div class="criteria-title">
+                                <img
+                                    src="./assets/icons/icon-reaction.svg"
+                                    alt=""
+                                />
+                                <span>Reaction</span>
+                            </div>
+                            <strong class="criteria-score">
+                                <span>80</span> / 100
+                            </strong>
+                        </li>
+                        <li
+                            class="criteria"
+                            style="--color: var(--orangeYellow)"
+                        >
+                            <div class="criteria-title">
+                                <img
+                                    src="./assets/icons/icon-memory.svg"
+                                    alt=""
+                                />
+                                <span>Memory</span>
+                            </div>
+                            <strong class="criteria-score">
+                                <span>92</span> / 100
+                            </strong>
+                        </li>
+                        <li class="criteria" style="--color: var(--greenTeal)">
+                            <div class="criteria-title">
+                                <img
+                                    src="./assets/icons/icon-verbal.svg"
+                                    alt=""
+                                />
+                                <span>Verbal</span>
+                            </div>
+                            <strong class="criteria-score">
+                                <span>61</span> / 100
+                            </strong>
+                        </li>
+                        <li class="criteria" style="--color: var(--cobaltBlue)">
+                            <div class="criteria-title">
+                                <img
+                                    src="./assets/icons/icon-visual.svg"
+                                    alt=""
+                                />
+                                <span>Visual</span>
+                            </div>
+                            <strong class="criteria-score">
+                                <span>72</span> / 100
+                            </strong>
+                        </li>
+                    </ul>
+                    <button class="summary-btn">Continue</button>
+                </div>
+            </article>
+        </main>
+    </body>
+</html>

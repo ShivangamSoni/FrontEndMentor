@@ -96,10 +96,11 @@ main {
 }
 
 .final-score {
+    --size: 200px;
     display: grid;
     place-content: center;
 
-    width: 200px;
+    width: var(--size);
     aspect-ratio: 1/1;
     border-radius: 100%;
 
@@ -241,4 +242,39 @@ main {
 
 .summary-btn:hover {
     background-position: bottom;
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        font-size: 16px;
+    }
+
+    main {
+        place-items: start center;
+    }
+
+    .result {
+        grid-template-columns: 1fr;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+
+    .result-final {
+        gap: 20px;
+        padding-inline: 40px;
+        padding-block: 20px 40px;
+    }
+
+    .final-details {
+        margin-block-start: 0;
+    }
+
+    .final-score {
+        --size: 150px;
+    }
+
+    .result-summary {
+        gap: 20px;
+        padding: 30px;
+    }
 }

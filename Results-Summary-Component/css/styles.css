@@ -30,20 +30,21 @@ button {
 
 :root {
     /* Primary */
-    --lightRed: hsl(0, 100%, 67%);
-    --orangeYellow: hsl(39, 100%, 56%);
-    --greenTeal: hsl(166, 100%, 37%);
-    --cobaltBlue: hsl(234, 85%, 45%);
+    --lightRed: 0, 100%, 67%;
+    --orangeYellow: 39, 100%, 56%;
+    --greenTeal: 166, 100%, 37%;
+    --cobaltBlue: 234, 85%, 45%;
     /* BG Gradient */
     --lightSlateBlue: hsl(252, 100%, 67%);
     --lightRoyalBlue: hsl(241, 81%, 54%);
     --violetBlue: hsla(256, 72%, 46%, 1);
     --persianBlue: hsla(241, 72%, 46%, 0);
+
     /* Neutral */
     --white: hsl(0, 0%, 100%);
-    --paleBlue: hsl(221, 100%, 96%);
+    --paleBlue: 221, 100%, 96%;
     --lightLavender: hsl(241, 100%, 89%);
-    --darkGrayBlue: hsl(224, 30%, 27%);
+    --darkGrayBlue: 224, 30%, 27%;
 
     font-family: "HankenGrotesk";
     font-size: 18px;
@@ -51,4 +52,193 @@ button {
 
 body {
     background-color: var(--white);
+}
+
+main {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+/* Result */
+.result {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(740px, 100%);
+
+    border-radius: 30px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 15px 0 hsla(var(--darkGrayBlue), 0.2),
+        0 15px 25px 0 hsla(var(--darkGrayBlue), 0.3);
+}
+
+/* Result: Final */
+.result-final {
+    display: grid;
+    gap: 40px;
+    place-items: center;
+
+    padding-inline: 60px;
+    padding-block: 40px;
+
+    border-radius: inherit;
+    text-align: center;
+    background-image: linear-gradient(
+        var(--lightSlateBlue),
+        var(--lightRoyalBlue)
+    );
+}
+
+.final-title {
+    color: hsla(var(--paleBlue), 0.8);
+    font-size: 1.3rem;
+}
+
+.final-score {
+    display: grid;
+    place-content: center;
+
+    width: 200px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+
+    background-image: linear-gradient(var(--violetBlue), var(--persianBlue));
+    color: hsla(var(--paleBlue), 0.5);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.final-score > .acquired {
+    color: var(--white);
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.final-remark {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.final-details {
+    margin-block-start: -20px;
+    color: hsla(var(--paleBlue), 0.7);
+}
+
+/* Result: Summary */
+.result-summary {
+    display: grid;
+    gap: 40px;
+    padding: 40px;
+}
+
+.summary-title {
+    font-size: 1.3rem;
+    color: hsla(var(--darkGrayBlue));
+}
+
+/* Summary Criteria List */
+.summary-criteria {
+    display: grid;
+    gap: 20px;
+}
+
+/* Criteria Card */
+.criteria {
+    --edge: 25px;
+    --borderOp: 0.2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+
+    color: hsl(var(--color));
+    background-color: hsla(var(--color), 0.05);
+
+    box-shadow: 0 0 0 1px hsla(var(--color), var(--borderOp));
+    position: relative;
+    transition: box-shadow 300ms linear;
+}
+
+/* Criteria Card Edge Border */
+.criteria::before,
+.criteria::after {
+    transition: width 300ms linear, height 300ms linear;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(
+        to bottom,
+        white 0%,
+        white calc(5% + 1px),
+        transparent calc(5% + 1px),
+        transparent calc(95% - 1px),
+        white calc(95% - 1px),
+        white 100%
+    );
+    width: calc(100% - var(--edge));
+    height: 110%;
+}
+
+.criteria::after {
+    height: calc(100% - var(--edge));
+    width: 110%;
+    background-image: linear-gradient(
+        to right,
+        white 0%,
+        white calc(5% - 1px),
+        transparent calc(5% - 1px),
+        transparent calc(95% + 1px),
+        white calc(95% + 1px),
+        white 100%
+    );
+}
+
+.criteria:hover {
+    --edge: 100%;
+    --borderOp: 1;
+}
+
+.criteria-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.criteria-score {
+    color: hsla(var(--darkGrayBlue), 0.6);
+}
+
+.criteria-score > span {
+    color: hsla(var(--darkGrayBlue));
+}
+
+/* Summary: Button */
+.summary-btn {
+    border: none;
+    outline: 2px solid transparent;
+    color: var(--white);
+    font-size: 1.2rem;
+    padding: 20px;
+    border-radius: 900vmax;
+    background-image: linear-gradient(
+        to bottom,
+        hsl(var(--darkGrayBlue)) 0%,
+        hsl(var(--darkGrayBlue)) 50%,
+        var(--lightSlateBlue) 50%,
+        var(--lightRoyalBlue) 100%
+    );
+    background-size: 100% 200%;
+    transition: background-position 200ms linear;
+}
+
+.summary-btn:hover {
+    background-position: bottom;
 }

@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --brightYellow: hsl(71, 73%, 54%);
+    --lightGray: hsl(204, 43%, 93%);
+    --grayishBlue: hsl(218, 22%, 67%);
+
+    font-size: 16px;
+    font-family: Karla, sans-serif;
+}
+
+body,
+h1,
+h2,
+p,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-color: var(--lightGray);
+}

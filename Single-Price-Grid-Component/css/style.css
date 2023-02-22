@@ -49,7 +49,6 @@ main {
 
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto auto;
     grid-template-areas:
         "info info"
         "sub why";
@@ -113,7 +112,7 @@ main {
 
 .sub-price > strong {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 600;
     color: hsl(var(--white));
 }
 
@@ -160,4 +159,25 @@ main {
     color: hsl(var(--lightGray));
     font-size: 0.9rem;
     line-height: 1.6;
+}
+
+@media screen and (max-width: 635px) {
+    :root {
+        font-size: 14px;
+    }
+
+    .joinUs {
+        --px: 25px;
+        --py: 25px;
+
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-template-areas:
+            "info"
+            "sub"
+            "why";
+    }
+
+    .info-subtitle {
+        margin-block-end: 30px;
+    }
 }

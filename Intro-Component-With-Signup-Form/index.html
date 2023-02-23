@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/icons/favicon-32x32.png"
+        />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Font: Poppins -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <!-- Script -->
+        <script src="./scripts/app.js" defer></script>
+        <title>Frontend Mentor | Intro component with sign up form</title>
+    </head>
+    <body>
+        <main>
+            <section class="sect">
+                <div class="intro">
+                    <h1 class="intro-heading">
+                        Learn to code by watching others
+                    </h1>
+                    <p class="intro-details">
+                        See how experienced developers solve problems in
+                        real-time. Watching scripted tutorials is great, but
+                        understanding how developers think is invaluable.
+                    </p>
+                </div>
+
+                <div class="signup">
+                    <h2 class="signup-heading shadow-bottom">
+                        <strong>Try it free 7 days</strong>
+                        then $20/mo. thereafter
+                    </h2>
+                    <form class="signup-form" autocomplete="off" novalidate>
+                        <div class="form-field">
+                            <label>
+                                <span class="field-label"> First Name </span>
+                                <input
+                                    class="field-input"
+                                    name="first_name"
+                                    type="text"
+                                />
+                            </label>
+                            <span class="field-error"></span>
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="field-label">Last Name</span>
+                                <input
+                                    class="field-input"
+                                    name="last_name"
+                                    type="text"
+                                />
+                            </label>
+                            <span class="field-error"></span>
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="field-label">Email Address</span>
+                                <input
+                                    class="field-input"
+                                    name="email"
+                                    type="email"
+                                />
+                            </label>
+                            <span class="field-error"></span>
+                        </div>
+                        <div class="form-field">
+                            <label>
+                                <span class="field-label">Password</span>
+                                <input
+                                    class="field-input"
+                                    name="password"
+                                    type="password"
+                                />
+                            </label>
+                            <span class="field-error"></span>
+                        </div>
+
+                        <div class="form-footer">
+                            <button
+                                type="submit"
+                                class="form-btn shadow-bottom shadow-bottom__hover"
+                            >
+                                Claim your free trial
+                            </button>
+                            <p class="footer-text">
+                                By clicking the button, you are agreeing to our
+                                <a href="#" class="link">Terms and Services</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

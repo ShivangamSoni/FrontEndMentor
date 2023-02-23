@@ -9,14 +9,71 @@
             sizes="32x32"
             href="./assets/icons/favicon-32x32.png"
         />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Font: Poppins -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/style.css" />
         <title>Frontend Mentor | Intro component with sign up form</title>
     </head>
     <body>
-        Learn to code by watching others See how experienced developers solve
-        problems in real-time. Watching scripted tutorials is great, but
-        understanding how developers think is invaluable. Try it free 7 days
-        then $20/mo. thereafter First Name Last Name Email Address Password
-        Claim your free trial By clicking the button, you are agreeing to our
-        Terms and Services
+        <main>
+            <section class="sect">
+                <div class="intro">
+                    <h1 class="intro-heading">
+                        Learn to code by watching others
+                    </h1>
+                    <p class="intro-details">
+                        See how experienced developers solve problems in
+                        real-time. Watching scripted tutorials is great, but
+                        understanding how developers think is invaluable.
+                    </p>
+                </div>
+
+                <div class="signup">
+                    <h2 class="signup-heading">
+                        <strong>Try it free 7 days</strong>
+                        then $20/mo. thereafter
+                    </h2>
+                    <form class="signup-form">
+                        <label class="form-field">
+                            <span class="field-label">First Name</span>
+                            <input class="field-input" type="text" />
+                            <span class="field-error"></span>
+                        </label>
+                        <label class="form-field">
+                            <span class="field-label">Last Name</span>
+                            <input class="field-input" type="text" />
+                            <span class="field-error"></span>
+                        </label>
+                        <label class="form-field">
+                            <span class="field-label">Email Address</span>
+                            <input class="field-input" type="email" />
+                            <span class="field-error"></span>
+                        </label>
+                        <label class="form-field">
+                            <span class="field-label">Password</span>
+                            <input class="field-input" type="password" />
+                            <span class="field-error"></span>
+                        </label>
+
+                        <div class="form-footer">
+                            <button class="form-btn">
+                                Claim your free trial
+                            </button>
+                            <p class="footer-text">
+                                By clicking the button, you are agreeing to our
+                                Terms and Services
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
     </body>
 </html>

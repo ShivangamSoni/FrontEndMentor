@@ -19,6 +19,8 @@
         />
         <!-- Styles -->
         <link rel="stylesheet" href="./css/style.css" />
+        <!-- Script -->
+        <script src="./scripts/app.js" defer></script>
         <title>Frontend Mentor | Intro component with sign up form</title>
     </head>
     <body>
@@ -40,38 +42,55 @@
                         <strong>Try it free 7 days</strong>
                         then $20/mo. thereafter
                     </h2>
-                    <form class="signup-form">
+                    <form class="signup-form" autocomplete="off" novalidate>
                         <div class="form-field">
                             <label>
                                 <span class="field-label"> First Name </span>
-                                <input class="field-input" type="text" />
+                                <input
+                                    class="field-input"
+                                    name="first_name"
+                                    type="text"
+                                />
                             </label>
                             <span class="field-error"></span>
                         </div>
                         <div class="form-field">
                             <label>
                                 <span class="field-label">Last Name</span>
-                                <input class="field-input" type="text" />
+                                <input
+                                    class="field-input"
+                                    name="last_name"
+                                    type="text"
+                                />
                             </label>
                             <span class="field-error"></span>
                         </div>
                         <div class="form-field">
                             <label>
                                 <span class="field-label">Email Address</span>
-                                <input class="field-input" type="email" />
+                                <input
+                                    class="field-input"
+                                    name="email"
+                                    type="email"
+                                />
                             </label>
                             <span class="field-error"></span>
                         </div>
                         <div class="form-field">
                             <label>
                                 <span class="field-label">Password</span>
-                                <input class="field-input" type="password" />
+                                <input
+                                    class="field-input"
+                                    name="password"
+                                    type="password"
+                                />
                             </label>
                             <span class="field-error"></span>
                         </div>
 
                         <div class="form-footer">
                             <button
+                                type="submit"
                                 class="form-btn shadow-bottom shadow-bottom__hover"
                             >
                                 Claim your free trial

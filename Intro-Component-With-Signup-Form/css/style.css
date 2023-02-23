@@ -7,12 +7,15 @@
 
 :root {
     --red: hsl(0, 100%, 74%);
-    --green: hsl(154, 59%, 51%);
+    --green: 154, 59%, 51%;
+    --lightGreen: 154, 59%, 61%;
     --blue: hsl(248, 32%, 49%);
-    --darkBlue: hsl(249, 10%, 26%);
+    --darkBlue: 249, 10%, 26%;
     --grayishBlue: hsl(246, 25%, 77%);
+    --white: 0, 100%, 100%;
 
     font-family: "Poppins", sans-serif;
+    color: hsl(var(--white));
 }
 
 body,
@@ -25,4 +28,226 @@ input,
 button {
     margin: 0;
     padding: 0;
+}
+
+body {
+    background-color: var(--red);
+    background-image: url("../assets/bg/intro-desktop.png");
+}
+
+main {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+/* Section */
+.sect {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 70px;
+    width: min(1150px, 100%);
+    padding: 20px;
+}
+
+/* Intro */
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.intro-heading {
+    font-size: 2.5rem;
+}
+
+.intro-details {
+    color: hsla(var(--white), 0.8);
+}
+
+/* SignUp */
+.signup {
+    display: grid;
+    gap: 25px;
+    isolation: isolate;
+}
+
+.signup-heading {
+    font-size: 1rem;
+    padding: 1em;
+    border-radius: 10px;
+
+    background-color: var(--blue);
+    text-align: center;
+    color: hsl(var(--white));
+    font-weight: 400;
+}
+
+/* Form */
+.signup-form {
+    display: grid;
+    gap: 20px;
+    padding: 40px;
+    padding-block-end: 45px;
+    border-radius: 10px;
+
+    background-color: hsl(var(--white));
+}
+
+/* Form Field */
+.form-field {
+    display: grid;
+    gap: 5px;
+}
+
+.form-field.error > label {
+    --iconWidth: 4em;
+
+    outline-color: var(--red);
+    color: var(--red);
+}
+
+.form-field.error > label::after {
+    display: block;
+}
+
+.form-field > label {
+    --fz: 1rem;
+    --iconWidth: 1em;
+    --p: 1em var(--iconWidth) 1em 1em;
+
+    display: grid;
+    position: relative;
+    outline: 2px solid var(--blue);
+    border-radius: 5px;
+    color: hsl(var(--darkBlue));
+}
+
+.form-field > label::after {
+    display: none;
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: auto;
+    width: var(--iconWidth);
+    background-image: url("../assets/icons/error.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.field-label {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    padding: var(--p);
+    font-size: var(--fz);
+    font-weight: 700;
+    color: hsla(var(--darkBlue), 0.6);
+    transition: all 200ms linear;
+}
+
+.form-field > label:focus-within .field-label,
+.field-label.hidden {
+    opacity: 0;
+}
+
+.field-input {
+    padding: var(--p);
+    font-size: var(--fz);
+    border: none;
+    outline: none;
+
+    background-color: transparent;
+    color: inherit;
+    font-weight: 600;
+}
+
+.field-error {
+    font-size: 0.85rem;
+    text-align: right;
+    color: var(--red);
+}
+
+/* Form Footer */
+.form-footer {
+    display: grid;
+    gap: 10px;
+    color: var(--grayishBlue);
+    isolation: isolate;
+}
+
+.form-btn {
+    --shadowSize: 12px;
+    cursor: pointer;
+    border: none;
+    outline: 1px solid transparent;
+    padding: 1em;
+
+    border-radius: 10px;
+    background-color: hsl(var(--green));
+    color: hsl(var(--white));
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.form-btn:hover,
+.form-btn:focus-visible {
+    background-color: hsl(var(--lightGreen));
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+/* Shadow Bottom */
+.shadow-bottom {
+    position: relative;
+}
+
+.shadow-bottom::after {
+    content: "";
+    position: absolute;
+    inset: 90% 0 auto 0;
+    z-index: -1;
+
+    height: var(--shadowSize, 15px);
+
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+    background-color: hsla(var(--darkBlue), 0.3);
+}
+
+.shadow-bottom__hover::after {
+    opacity: 0;
+}
+
+.shadow-bottom__hover:hover::after,
+.shadow-bottom__hover:focus-visible::after {
+    opacity: 1;
+}
+
+/* Link */
+.link {
+    --borderSize: 2px;
+
+    border: none;
+    outline: 1px solid transparent;
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 150ms linear;
+
+    background-image: linear-gradient(var(--red), var(--red));
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-size: 0% var(--borderSize);
+    transition: background-size 350ms;
+}
+
+.link:hover,
+.link:focus-visible {
+    background-size: 100% var(--borderSize);
 }

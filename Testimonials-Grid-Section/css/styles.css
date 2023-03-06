@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary */
+    --violet: hsl(263, 55%, 52%);
+    --grayishBlue300: hsl(217, 19%, 35%);
+    --grayishBlue500: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    /* Neutral */
+    --gray: hsl(0, 0%, 81%);
+    --grayishBlue100: hsl(210, 46%, 95%);
+
+    font-size: 13px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body,
+h1,
+h2,
+p,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+main {
+    min-height: 100vh;
+}

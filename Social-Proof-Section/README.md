@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 -   [Solution](https://github.com/ShivangamSoni/FrontEndMentor/tree/main/Social-Proof-Section)
--   [Live Demo](https://ShivangamSoni.github.io/FrontEndMentor/Testimonials-Grid-Section)
+-   [Live Demo](https://ShivangamSoni.github.io/FrontEndMentor/Social-Proof-Section)
 
 ## My process
 

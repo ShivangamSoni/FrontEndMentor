@@ -166,3 +166,78 @@ figure {
     line-height: 1.5;
     font-size: 1.1rem;
 }
+
+@media screen and (min-width: 800px) {
+    .main {
+        display: grid;
+        place-items: center;
+    }
+
+    .main::before {
+        background-image: url(../assets/images/background/pattern-top-desktop.svg);
+    }
+
+    .main::after {
+        background-image: url(../assets/images/background/pattern-bottom-desktop.svg);
+    }
+
+    .social {
+        grid-template-columns: 2fr 3fr;
+        grid-template-areas:
+            "content ratings"
+            "reviews reviews";
+        gap: 70px;
+    }
+
+    .social__content {
+        grid-area: content;
+        text-align: left;
+    }
+
+    .content__title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .social__ratings {
+        grid-area: ratings;
+        align-items: center;
+    }
+
+    .rating {
+        width: 65%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 25px;
+        padding: 15px 25px;
+    }
+
+    .rating:first-child {
+        align-self: flex-start;
+    }
+
+    .rating:last-child {
+        align-self: flex-end;
+    }
+
+    .social__reviews {
+        --translate: 20px;
+
+        grid-area: reviews;
+        flex-direction: row;
+    }
+
+    .review {
+        --idx: 0;
+        transform: translateY(calc(var(--idx) * var(--translate)));
+    }
+
+    .review:nth-child(2) {
+        --idx: 1;
+    }
+
+    .review:nth-child(3) {
+        --idx: 2;
+    }
+}

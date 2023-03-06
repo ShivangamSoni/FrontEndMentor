@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --magenta100: hsl(300, 24%, 96%);
+    --magenta300: hsl(303, 10%, 53%);
+    --magenta500: hsl(300, 43%, 22%);
+    --pink: hsl(333, 80%, 67%);
+    --white: hsl(0, 0%, 100%);
+
+    font-size: 15px;
+    font-family: "League Spartan", sans-serif;
+}
+
+body,
+h1,
+h2,
+p,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.main {
+    min-height: 100vh;
+
+    position: relative;
+    isolation: isolate;
+}
+
+.main::before,
+.main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.main::before {
+    background-image: url(../assets/images/background/pattern-top-mobile.svg);
+    background-position: top left;
+}
+
+.main::after {
+    background-image: url(../assets/images/background/pattern-bottom-mobile.svg);
+    background-position: bottom right;
+}
+
+.social {
+    display: grid;
+    gap: 50px;
+    width: min(1110px, 100%);
+    margin: 0 auto;
+    padding-inline: 25px;
+    padding-block: 100px;
+}
+
+.social__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 25px;
+}
+
+.content__title {
+    color: var(--magenta500);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.content__info {
+    color: var(--magenta300);
+}
+
+.social__ratings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 7px;
+
+    background-color: var(--magenta100);
+}
+
+.rating__stars {
+    display: flex;
+    gap: 7px;
+}
+
+.rating__info {
+    color: var(--magenta500);
+    font-weight: 700;
+}
+
+.social__reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    border-radius: 7px;
+
+    background-color: var(--magenta500);
+}
+
+.review__header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 24px;
+}
+
+.review__image {
+    width: 40px;
+    height: 40px;
+    border-radius: 100vmax;
+}
+
+.review__buyer {
+    display: flex;
+    flex-direction: column;
+}
+
+.buyer__name {
+    color: var(--white);
+    font-weight: 700;
+}
+
+.buyer__status {
+    color: var(--pink);
+}
+
+.review__body {
+    color: var(--white);
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+@media screen and (min-width: 800px) {
+    .main {
+        display: grid;
+        place-items: center;
+    }
+
+    .main::before {
+        background-image: url(../assets/images/background/pattern-top-desktop.svg);
+    }
+
+    .main::after {
+        background-image: url(../assets/images/background/pattern-bottom-desktop.svg);
+    }
+
+    .social {
+        grid-template-columns: 2fr 3fr;
+        grid-template-areas:
+            "content ratings"
+            "reviews reviews";
+        gap: 70px;
+    }
+
+    .social__content {
+        grid-area: content;
+        text-align: left;
+    }
+
+    .content__title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .social__ratings {
+        grid-area: ratings;
+        align-items: center;
+    }
+
+    .rating {
+        width: 65%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 25px;
+        padding: 15px 25px;
+    }
+
+    .rating:first-child {
+        align-self: flex-start;
+    }
+
+    .rating:last-child {
+        align-self: flex-end;
+    }
+
+    .social__reviews {
+        --translate: 20px;
+
+        grid-area: reviews;
+        flex-direction: row;
+    }
+
+    .review {
+        --idx: 0;
+        transform: translateY(calc(var(--idx) * var(--translate)));
+    }
+
+    .review:nth-child(2) {
+        --idx: 1;
+    }
+
+    .review:nth-child(3) {
+        --idx: 2;
+    }
+}

@@ -127,3 +127,46 @@ main {
     font-size: 1.06rem;
     word-wrap: break-word;
 }
+
+/* Table */
+@media screen and (min-width: 650px) {
+    main {
+        display: grid;
+        place-items: center;
+    }
+
+    .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 900px) {
+    .testimonials {
+        grid-template-columns: none;
+        grid-auto-columns: 1fr;
+        grid-template-areas:
+            "first first second fifth"
+            "third fourth fourth fifth";
+    }
+
+    .testimonial:nth-child(1) {
+        grid-area: first;
+    }
+
+    .testimonial:nth-child(2) {
+        grid-area: second;
+    }
+
+    .testimonial:nth-child(3) {
+        grid-area: third;
+    }
+
+    .testimonial:nth-child(4) {
+        grid-area: fourth;
+    }
+
+    .testimonial:nth-child(5) {
+        grid-area: fifth;
+    }
+}

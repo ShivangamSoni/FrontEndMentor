@@ -199,6 +199,10 @@ figure {
         line-height: 1;
     }
 
+    .content__info {
+        font-size: 1.1rem;
+    }
+
     .social__ratings {
         grid-area: ratings;
         align-items: center;

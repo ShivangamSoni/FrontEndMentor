@@ -292,7 +292,7 @@ main {
 }
 
 .switch__position {
-    --switch-size: 1.2rem;
+    --switch-size: 1.2em;
 
     pointer-events: none;
     position: absolute;
@@ -352,4 +352,20 @@ main {
 .card__btn:hover,
 .card__btn:focus-visible {
     color: var(--white);
+}
+
+@media screen and (min-width: 475px) {
+    .card__duration {
+        font-size: 0.9rem;
+    }
+
+    .duration__option--discounted {
+        padding-bottom: 0;
+        padding-right: 0.5em;
+    }
+
+    .duration__discount {
+        top: auto;
+        left: 100%;
+    }
 }

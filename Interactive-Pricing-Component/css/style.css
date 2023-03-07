@@ -1,0 +1,423 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary */
+    --cyan200: hsl(174, 77%, 80%);
+    --cyan500: hsl(174, 86%, 45%);
+    --lightRed200: hsl(14, 92%, 95%);
+    --lightRed500: hsl(15, 100%, 70%);
+    --paleBlue: hsl(226, 100%, 87%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --blue50: hsl(230, 100%, 99%);
+    --blue100: hsl(224, 65%, 95%);
+    --blue200: hsl(223, 50%, 87%);
+    --blue300: hsl(225, 20%, 60%);
+    --blue700: hsl(227, 35%, 25%);
+
+    font-family: "Manrope", sans-serif;
+    color: var(--blue300);
+}
+
+body,
+h1,
+h2,
+p,
+ul,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+input,
+button {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.divider {
+    display: block;
+    border: none;
+    height: 1.5px;
+    width: 100%;
+    background-color: var(--blue100);
+}
+
+main {
+    min-height: 100vh;
+    background-color: var(--blue50);
+}
+
+.section {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    background-image: url(../assets/bg/pattern.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    background-position: top right;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: min(600px, 100%);
+    padding-inline: 30px;
+}
+
+.pricing__header {
+    display: flex;
+    flex-direction: column;
+    padding-block: 2.5rem;
+
+    text-align: center;
+
+    background-image: url(../assets/bg/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.pricing__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+
+    color: var(--blue700);
+}
+
+.pricing__introduction {
+    display: grid;
+    gap: 0.25em;
+    font-size: 1rem;
+}
+
+.pricing__card {
+    --p: 1.5rem;
+    --g: 2rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0px 10px 25px -0.3em var(--blue200);
+}
+
+.pricing__card > .divider {
+    margin-block: var(--g);
+}
+
+.card__body,
+.card__foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--g);
+    padding-inline: var(--p);
+}
+
+.card__body {
+    padding-block-start: var(--p);
+}
+
+.card__quantity {
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.card__cost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.card__slider {
+    --bg-fill: var(--cyan200);
+    --bg-empty: var(--blue100);
+    --fill-level: 50%;
+    --track-height: 0.5rem;
+
+    --thumb-size: 3.5rem;
+    --thumb-bg: var(--cyan500);
+
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+}
+
+.card__slider:active {
+    cursor: grabbing;
+}
+
+.card__slider::-webkit-slider-runnable-track {
+    background-color: var(--bg-empty);
+    background-image: linear-gradient(to right, var(--bg-fill), var(--bg-fill));
+    background-repeat: no-repeat;
+    background-size: var(--fill-level) 100%;
+    height: var(--track-height);
+    border-radius: 100vmax;
+}
+
+.card__slider::-moz-range-track {
+    background-color: var(--bg-empty);
+    background-image: linear-gradient(to right, var(--bg-fill), var(--bg-fill));
+    background-repeat: no-repeat;
+    background-size: var(--fill-level) 100%;
+    height: var(--track-height);
+    border-radius: 100vmax;
+}
+
+.card__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 100vmax;
+    height: var(--thumb-size);
+    width: var(--thumb-size);
+    background-color: var(--thumb-bg);
+    background-image: url(../assets/icons/slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    box-shadow: 0px calc(var(--thumb-size) / 4) 25px 5px var(--bg-fill);
+    /* 
+     Formula Source: https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/#chrome-safari-edge-chromium-webkit
+     */
+    margin-top: calc(
+        calc(var(--track-height) / 2) - calc(var(--thumb-size) / 2)
+    );
+}
+
+.card__slider::-webkit-slider-thumb:hover {
+    filter: brightness(110%);
+}
+
+.card__slider::-webkit-slider-thumb:active {
+    filter: brightness(90%);
+}
+
+.card__slider::-moz-range-thumb {
+    border: none;
+    border-radius: 100vmax;
+    height: var(--thumb-size);
+    width: var(--thumb-size);
+    background-color: var(--thumb-bg);
+    background-image: url(../assets/icons/slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    box-shadow: 0px calc(var(--thumb-size) / 4) 25px 5px var(--bg-fill);
+}
+
+.card__slider::-moz-range-thumb:hover {
+    filter: brightness(110%);
+}
+
+.card__slider::-moz-range-thumb:active {
+    filter: brightness(90%);
+}
+
+.cost__total {
+    color: var(--blue700);
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.card__duration {
+    --gap: 1em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+
+    font-size: 0.85rem;
+}
+
+.duration__option {
+    font-weight: 600;
+    text-align: center;
+}
+
+.duration__option--discounted {
+    position: relative;
+    padding-bottom: 0.25em;
+}
+
+.duration__discount {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 100vmax;
+    font-size: 1em;
+    padding-inline: 1em;
+    background-color: var(--lightRed200);
+    color: var(--lightRed500);
+}
+
+.duration__switch {
+    --p: 0.2em;
+
+    cursor: pointer;
+    background-color: var(--blue200);
+    width: 3.2rem;
+    padding-inline: var(--p);
+    padding-block: var(--p);
+    border-radius: 100vmax;
+    position: relative;
+}
+
+.duration__switch:hover {
+    background-color: var(--cyan200);
+}
+
+.switch__position {
+    --switch-size: 1.2em;
+
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: var(--p);
+    transform: translateY(-50%);
+    width: var(--switch-size);
+    height: var(--switch-size);
+    border-radius: 100vmax;
+    background-color: var(--white);
+    transition: all 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.duration__switch > input {
+    opacity: 0;
+}
+
+.duration__switch > input:checked ~ .switch__position {
+    left: calc(100% - var(--p));
+    transform: translateY(-50%) translateX(-100%);
+}
+
+.card__foot {
+    padding-block-end: var(--p);
+}
+
+.card__features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    list-style: none;
+}
+
+.card__features li {
+    padding-left: 1em;
+}
+
+.card__features ::marker {
+    content: url(../assets/icons/check.svg);
+}
+
+.card__btn {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 100vmax;
+    padding: 0.7em 2em;
+    font-size: 1.2rem;
+    background-color: var(--blue700);
+    color: var(--paleBlue);
+    font-weight: 800;
+    transition: 300ms;
+}
+
+.card__btn:hover,
+.card__btn:focus-visible {
+    color: var(--white);
+}
+
+@media screen and (min-width: 475px) {
+    .card__duration {
+        font-size: 0.9rem;
+    }
+
+    .duration__option--discounted {
+        padding-bottom: 0;
+        padding-right: 0.5em;
+    }
+
+    .duration__discount {
+        top: auto;
+        left: 100%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .pricing__title {
+        font-size: 2rem;
+    }
+
+    .pricing__introduction {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pricing__card {
+        --p: 2rem;
+        --g: 3rem;
+    }
+
+    .card__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "quantity cost"
+            "slider slider"
+            "duration duration";
+    }
+
+    .card__quantity {
+        grid-area: quantity;
+    }
+
+    .card__cost {
+        grid-area: cost;
+    }
+
+    .card__slider {
+        grid-area: slider;
+    }
+
+    .card__duration {
+        grid-area: duration;
+    }
+
+    .card__foot {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card__features {
+        align-items: start;
+        padding-block-end: var(--g);
+        padding-left: 1em;
+    }
+}

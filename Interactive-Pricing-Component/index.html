@@ -19,6 +19,8 @@
         />
         <!-- Styles -->
         <link rel="stylesheet" href="./css/style.css" />
+        <!-- Scripts -->
+        <script src="./scripts/app.js" defer></script>
         <title>Frontend Mentor | Interactive pricing component</title>
     </head>
     <body>
@@ -39,8 +41,17 @@
 
                     <article class="pricing__card">
                         <div class="card__body">
-                            <span class="card__quantity">100K Pageviews</span>
-                            <input type="range" class="card__slider" />
+                            <span class="card__quantity">
+                                <span class="quantity__value">100K</span>
+                                Pageviews
+                            </span>
+                            <input
+                                type="range"
+                                class="card__slider"
+                                min="10000"
+                                max="1000000"
+                                step="5000"
+                            />
                             <span class="card__cost">
                                 <span class="cost__total">$16.00</span>
                                 <span class="cost__duration">/ month</span>
@@ -50,7 +61,10 @@
                                     Monthly Billing
                                 </span>
                                 <label class="duration__switch">
-                                    <input type="checkbox" />
+                                    <input
+                                        type="checkbox"
+                                        id="duration-checkbox"
+                                    />
                                     <span class="switch__position"></span>
                                 </label>
                                 <span

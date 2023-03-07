@@ -369,3 +369,55 @@ main {
         left: 100%;
     }
 }
+
+@media screen and (min-width: 700px) {
+    .pricing__title {
+        font-size: 2rem;
+    }
+
+    .pricing__introduction {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pricing__card {
+        --p: 2rem;
+        --g: 3rem;
+    }
+
+    .card__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "quantity cost"
+            "slider slider"
+            "duration duration";
+    }
+
+    .card__quantity {
+        grid-area: quantity;
+    }
+
+    .card__cost {
+        grid-area: cost;
+    }
+
+    .card__slider {
+        grid-area: slider;
+    }
+
+    .card__duration {
+        grid-area: duration;
+    }
+
+    .card__foot {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card__features {
+        align-items: start;
+        padding-block-end: var(--g);
+        padding-left: 1em;
+    }
+}

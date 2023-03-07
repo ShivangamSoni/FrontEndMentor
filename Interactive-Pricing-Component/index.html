@@ -45,9 +45,13 @@
                                 <span class="quantity__value">100K</span>
                                 Pageviews
                             </span>
+                            <label for="quantitySlider" class="hidden">
+                                Quantity
+                            </label>
                             <input
                                 type="range"
                                 class="card__slider"
+                                id="quantitySlider"
                                 min="10000"
                                 max="1000000"
                                 step="5000"
@@ -61,6 +65,9 @@
                                     Monthly Billing
                                 </span>
                                 <label class="duration__switch">
+                                    <span class="hidden">
+                                        Select Duration (Monthly or Yearly)
+                                    </span>
                                     <input
                                         type="checkbox"
                                         id="duration-checkbox"

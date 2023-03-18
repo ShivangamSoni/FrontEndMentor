@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+:root {
+    --clr-primary-200: 228, 56%, 26%;
+    --clr-primary-500: 229, 57%, 11%;
+    --clr-secondary: 243, 100%, 93%;
+    --clr-neutral-100: 0, 100%, 100%;
+    --clr-neutral-500: 229, 7%, 55%;
+    --clr-neutral-900: 0, 100%, 0%;
+
+    --gradient-progress: linear-gradient(
+        to right,
+        hsl(6, 100%, 80%),
+        hsl(335, 100%, 65%)
+    );
+
+    --font-family-default: "Raleway", sans-serif;
+
+    --fw-bold: 700;
+
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+}
+
+body {
+    font-family: var(--font-family-default);
+    font-size: var(--fs-400);
+    color: hsl(var(--clr-neutral-900));
+}
+
+button {
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

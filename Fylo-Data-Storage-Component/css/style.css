@@ -68,13 +68,19 @@ button {
 
 .section__storage {
     display: grid;
-    align-content: center;
-    gap: 1rem;
-    padding-inline: 2rem;
+    place-items: center;
 
     background-image: url("../assets/images/bg-mobile.png");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.storage__wrapper {
+    display: grid;
+    align-content: center;
+    gap: 1rem;
+    width: min(70rem, 100%);
+    padding-inline: 2rem;
 }
 
 .storage__card {
@@ -215,4 +221,61 @@ button {
 
     border-radius: 100vmax;
     background-color: hsl(var(--clr-neutral-100));
+}
+
+@media screen and (min-width: 50rem) {
+    .section__storage {
+        background-image: url("../assets/images/bg-desktop.png");
+        background-size: calc(100% - 1rem) 50%;
+        background-position: bottom right;
+    }
+
+    .storage__wrapper {
+        grid-template-columns: 23rem 1fr;
+        gap: 2rem;
+        align-items: end;
+    }
+}
+
+@media screen and (min-width: 60rem) {
+    .storage__card {
+        padding: 3rem;
+    }
+
+    .storage__usage {
+        padding-block-end: 3rem;
+        padding-inline: 2rem;
+    }
+
+    .usage__info {
+        text-align: left;
+        font-size: var(--fs-400);
+    }
+
+    .usage__badge {
+        padding: 0.75rem 1.5rem;
+        width: max-content;
+
+        inset: initial;
+        top: 0;
+        right: 2rem;
+        transform: translate(0, -50%);
+    }
+
+    .usage__badge::after {
+        content: "";
+        position: absolute;
+        top: 85%;
+        right: 0;
+
+        /* Triangle Tip */
+        border: 1rem solid white;
+        border-inline-start-color: transparent;
+        border-block-end-color: transparent;
+    }
+
+    .usage__scale {
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-400);
+    }
 }

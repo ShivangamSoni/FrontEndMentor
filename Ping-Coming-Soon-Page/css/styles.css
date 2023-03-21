@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+:root {
+  --clr-primary: 223, 87%, 63%;
+
+  
+  --clr-secondary-blue: 223, 100%, 88%
+  --clr-secondary-red: 354, 100%, 66%
+  
+  --clr-neutral-300: 0, 0%, 59%;
+  --clr-neutral-700: 209, 33%, 12%;
+
+  --font-family-default: 'Libre Franklin', sans-serif;
+
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-300: 0.875rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.5rem;
+  --fs-600: 2rem;
+  --fs-700: 2.5rem;
+}
+
+body {
+  font-family: var(--font-family-default);
+  font-size: var(--fs-400);
+  color: hsl(var(--clr-neutral-700));
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

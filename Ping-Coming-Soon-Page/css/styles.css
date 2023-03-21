@@ -11,48 +11,199 @@
 }
 
 :root {
-  --clr-primary: 223, 87%, 63%;
+    --clr-primary: 223, 87%, 63%;
 
-  
-  --clr-secondary-blue: 223, 100%, 88%
-  --clr-secondary-red: 354, 100%, 66%
-  
-  --clr-neutral-300: 0, 0%, 59%;
-  --clr-neutral-700: 209, 33%, 12%;
+    --clr-secondary-blue: 223, 100%, 88%;
+    --clr-secondary-red: 354, 100%, 66%;
 
-  --font-family-default: 'Libre Franklin', sans-serif;
+    --clr-neutral-100: 0, 0%, 100%;
+    --clr-neutral-300: 0, 0%, 59%;
+    --clr-neutral-700: 209, 33%, 12%;
 
-  --fw-semibold: 600;
-  --fw-bold: 700;
+    --font-family-default: "Libre Franklin", sans-serif;
 
-  --fs-300: 0.875rem;
-  --fs-400: 1.125rem;
-  --fs-500: 1.5rem;
-  --fs-600: 2rem;
-  --fs-700: 2.5rem;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    --fs-100: 0.75rem;
+    --fs-200: 0.85rem;
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.5rem;
+    --fs-600: 2rem;
+    --fs-700: 2.5rem;
 }
 
 body {
-  font-family: var(--font-family-default);
-  font-size: var(--fs-400);
-  color: hsl(var(--clr-neutral-700));
+    font-family: var(--font-family-default);
+    font-size: var(--fs-400);
+    color: hsl(var(--clr-neutral-700));
 }
 
 button {
-  appearance: none;
-  cursor: pointer;
-  border: none;
-  outline: none;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.logo {
+    padding-block: 1rem 1.5rem;
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.section__comingsoon {
+    display: grid;
+    align-items: stretch;
+    justify-items: center;
+}
+
+.comingsoon__wrapper {
+    display: grid;
+    align-content: start;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 2rem;
+
+    width: min(50rem, 100%);
+    padding: 3rem 2rem;
+
+    text-align: center;
+}
+
+.commingsoon__notify {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+}
+
+.notify__heading {
+    color: hsl(var(--clr-neutral-300));
+    font-size: var(--fs-500);
+}
+
+.notify__heading > strong {
+    font-weight: var(--fw-bold);
+    color: hsl(var(--clr-neutral-700));
+}
+
+.notify__info {
+    font-size: var(--fs-200);
+}
+
+.notify__form {
+    display: grid;
+    gap: 0.75rem;
+    margin-block-start: 1rem;
+}
+
+.notify__field {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.field__input {
+    appearance: none;
+    border: none;
+    outline: 1px solid hsl(var(--clr-secondary-blue));
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 100vmax;
+    font-size: var(--fs-300);
+    color: hsl(var(--clr-neutral-700));
+}
+
+.field__input::placeholder {
+    color: hsl(var(--clr-secondary-blue));
+}
+
+.field__input[aria-invalid="true"] {
+    outline-color: hsl(var(--clr-secondary-red));
+}
+
+.field__error {
+    font-size: var(--fs-200);
+    color: hsl(var(--clr-secondary-red));
+}
+
+.field__error[aria-hidden="true"] {
+    display: none;
+}
+
+.notify__btn {
+    --alpha: 1;
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 100vmax;
+    color: hsl(var(--clr-neutral-100));
+    background-color: hsla(var(--clr-primary), var(--alpha));
+    font-size: var(--fs-300);
+    font-weight: var(--fw-semibold);
+
+    box-shadow: 0 3px 7px 1px hsl(var(--clr-secondary-blue));
+}
+
+.notify__btn:hover,
+.notify__btn:focus-visible {
+    --alpha: 0.85;
+}
+
+.comingsoon__image {
+    display: flex;
+    align-items: center;
+}
+
+.comingsoon__image > img {
+    width: 100%;
+}
+
+.comingsoon__footer {
+    display: grid;
+    gap: 1rem;
+}
+
+.footer__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+
+    border: 1px solid hsl(var(--clr-secondary-blue));
+    border-radius: 100vmax;
+    background-color: hsl(var(--clr-neutral-100));
+    color: hsl(var(--clr-primary));
+    font-size: var(--fs-400);
+}
+
+.social__btn:hover,
+.social__btn:focus-visible {
+    color: hsl(var(--clr-neutral-100));
+    background-color: hsl(var(--clr-primary));
+    border-color: hsl(var(--clr-primary));
+}
+
+.footer__copyright {
+    font-size: var(--fs-100);
+    color: hsl(var(--clr-neutral-300));
 }

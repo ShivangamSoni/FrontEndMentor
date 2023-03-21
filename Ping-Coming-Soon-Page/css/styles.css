@@ -207,3 +207,41 @@ button {
     font-size: var(--fs-100);
     color: hsl(var(--clr-neutral-300));
 }
+
+@media screen and (min-width: 40rem) {
+    .logo {
+        padding-block: 1rem 0;
+    }
+
+    .notify__heading {
+        font-size: var(--fs-700);
+    }
+
+    .notify__info {
+        font-size: var(--fs-400);
+    }
+
+    .notify__form {
+        grid-template-columns: 1fr auto;
+        align-items: start;
+    }
+
+    .field__input {
+        font-size: var(--fs-400);
+    }
+
+    .field__error {
+        font-size: var(--fs-300);
+        text-align: start;
+        padding-inline: 1.5rem;
+    }
+
+    .notify__btn {
+        padding-inline: 2.5rem;
+        box-shadow: 0 3px 7px 2px hsl(var(--clr-secondary-blue));
+    }
+
+    .footer__copyright {
+        font-size: var(--fs-200);
+    }
+}

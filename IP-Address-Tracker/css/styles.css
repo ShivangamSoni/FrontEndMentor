@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --clr-grey-300: hsl(0, 0%, 17%);
+    --clr-grey-700: hsl(0, 0%, 59%);
+
+    --font-family: "Rubik", sans-serif;
+
+    --fz-50: 1rem;
+    --fz-100: 1.125rem;
+    --fz-200: 1.25rem;
+    --fz-300: 1.5rem;
+    --fz-400: 2rem;
+    --fz-500: 3rem;
+}
+
+h1,
+h2 {
+    font-size: var(--fz-100);
+    font-weight: 400;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

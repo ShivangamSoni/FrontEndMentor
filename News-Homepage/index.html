@@ -19,6 +19,8 @@
         />
         <!-- Styles -->
         <link rel="stylesheet" href="./css/styles.css" />
+        <!-- Scripts -->
+        <script src="./scripts/app.js" defer></script>
         <title>Frontend Mentor | News homepage</title>
     </head>
     <body>
@@ -27,13 +29,13 @@
                 <span class="sr-only">New Site</span>
                 <img src="./assets/images/logo.svg" alt="Site Logo" />
             </h1>
-            <button class="hamburger open" aria-hidden="true">
+            <button id="nav-btn" class="hamburger" aria-hidden="true">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="sr-only">Open Nav Menu</span>
             </button>
-            <nav class="nav" aria-expanded="true">
+            <nav class="nav" id="nav" aria-expanded="true">
                 <ul class="nav__list">
                     <li>
                         <a class="nav__link" href="#">Home</a>

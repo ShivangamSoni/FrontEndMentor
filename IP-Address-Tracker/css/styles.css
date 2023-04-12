@@ -89,6 +89,7 @@ button {
     padding: 2rem;
     position: absolute;
     inset: 0 0 auto 0;
+    z-index: 1000;
 }
 
 .title {
@@ -151,6 +152,36 @@ button {
 .detail__data {
     font-weight: 500;
     font-size: var(--fz-200);
+}
+
+/* Notifications */
+#notifications {
+    display: grid;
+    gap: 1rem;
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    z-index: 1000;
+    width: min(30rem, 98%);
+}
+
+.notification {
+    display: grid;
+    gap: 0.5rem;
+    background-color: var(--clr-white);
+    padding: 1rem;
+    border-radius: 0.75rem 0 0 0.75rem;
+    box-shadow: var(--card-shadow);
+}
+
+.notification__title {
+    color: var(--clr-grey-700);
+    font-size: var(--fz-300);
+    font-weight: 500;
+}
+
+.notification__details {
+    font-size: var(--fz-50);
 }
 
 @media screen and (min-width: 640px) {

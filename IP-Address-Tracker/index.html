@@ -19,6 +19,20 @@
         />
         <!-- Styles -->
         <link rel="stylesheet" href="./css/styles.css" />
+        <!-- Leaflet: Styles & Scripts -->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+            integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+            crossorigin=""
+        />
+        <script
+            src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+            crossorigin=""
+        ></script>
+        <!-- Scripts -->
+        <script src="./scripts/app.js" defer></script>
         <title>Frontend Mentor | IP Address Tracker</title>
     </head>
     <body>
@@ -45,19 +59,23 @@
                 <div class="details card">
                     <div class="detail">
                         <h2 class="detail__title">IP Address</h2>
-                        <span class="detail__data">127.0.0.1</span>
+                        <span class="detail__data" id="ip">127.0.0.1</span>
                     </div>
                     <div class="detail">
                         <h2 class="detail__title">Location</h2>
-                        <span class="detail__data">Secrete Facility, Moon</span>
+                        <span class="detail__data" id="location">
+                            Secrete Facility, Moon
+                        </span>
                     </div>
                     <div class="detail">
                         <h2 class="detail__title">Timezone</h2>
-                        <span class="detail__data">UTC-00:00</span>
+                        <span class="detail__data" id="timezone">
+                            UTC-00:00
+                        </span>
                     </div>
                     <div class="detail">
                         <h2 class="detail__title">ISP</h2>
-                        <span class="detail__data">Google</span>
+                        <span class="detail__data" id="isp">Google</span>
                     </div>
                 </div>
             </div>
@@ -70,6 +88,15 @@
                 <img src="./assets/images/bg/pattern-desktop.png" alt="" />
             </picture>
             <div id="map">MAP</div>
+
+            <div id="notifications"></div>
         </main>
+
+        <template id="alert-template">
+            <div class="notification">
+                <span class="notification__title"></span>
+                <span class="notification__details"></span>
+            </div>
+        </template>
     </body>
 </html>

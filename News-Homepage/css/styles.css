@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Theme */
+:root {
+    --font-primary: "Inter", sans-serif;
+
+    --clr-primary-orange: hsl(35, 77%, 62%);
+    --clr-primary-red: hsl(5, 85%, 63%);
+    --clr-neutral-white: hsl(36, 100%, 99%);
+    --clr-neutral-grey: hsl(233, 8%, 79%);
+    --clr-neutral-blue-400: hsl(236, 13%, 42%);
+    --clr-neutral-blue-700: hsl(240, 100%, 5%);
+
+    --fz-50: 1rem;
+    --fz-100: 1.125rem;
+    --fz-200: 1.25rem;
+    --fz-300: 1.5rem;
+    --fz-400: 2rem;
+    --fz-500: 2.5rem;
+    --fz-600: 3rem;
+    --fz-700: 4rem;
+    --fz-800: 5rem;
+}
+
+/* Reset */
+h1,
+h2,
+h3,
+p {
+    font-size: var(--fz-100);
+    color: var(--clr-neutral-blue-700);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+a,
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+html {
+    font-family: var(--font-primary);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

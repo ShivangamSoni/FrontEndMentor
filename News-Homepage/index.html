@@ -27,8 +27,14 @@
                 <span class="sr-only">New Site</span>
                 <img src="./assets/images/logo.svg" alt="Site Logo" />
             </h1>
-            <nav>
-                <ul class="nav">
+            <button class="hamburger open" aria-hidden="false">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="sr-only">Open Nav Menu</span>
+            </button>
+            <nav class="nav" aria-expanded="false">
+                <ul class="nav__list">
                     <li>
                         <a class="nav__link" href="#">Home</a>
                     </li>
@@ -51,7 +57,7 @@
         <main class="max-w">
             <div class="main">
                 <article class="main__hero">
-                    <picture class="hero__image">
+                    <picture>
                         <source
                             media="(max-width: 640px)"
                             srcset="
@@ -65,7 +71,7 @@
                     </picture>
                     <div class="hero__body">
                         <h2 class="title">The Bright Future of Web 3.0?</h2>
-                        <div>
+                        <div class="hero__content">
                             <p class="para">
                                 We dive into the next evolution of the web that
                                 claims to put the power of the platforms back
@@ -83,7 +89,7 @@
                         <li>
                             <article class="new__article">
                                 <h3>
-                                    <a class="title" href="">
+                                    <a class="title link" href="">
                                         Hydrogen VS Electric Cars
                                     </a>
                                 </h3>
@@ -96,7 +102,7 @@
                         <li>
                             <article class="new__article">
                                 <h3>
-                                    <a class="title" href="">
+                                    <a class="title link" href="">
                                         The Downsides of AI Artistry
                                     </a>
                                 </h3>
@@ -109,7 +115,7 @@
                         <li>
                             <article class="new__article">
                                 <h3>
-                                    <a class="title" href="">
+                                    <a class="title link" href="">
                                         Is VC Funding Drying Up?
                                     </a>
                                 </h3>
@@ -134,7 +140,7 @@
                         <div class="article__body">
                             <span class="article__tag">01</span>
                             <h3>
-                                <a class="title" href="">
+                                <a class="title link" href="">
                                     Reviving Retro PCs
                                 </a>
                             </h3>
@@ -155,7 +161,7 @@
                         <div class="article__body">
                             <span class="article__tag">02</span>
                             <h3>
-                                <a class="title" href="">
+                                <a class="title link" href="">
                                     Top 10 Laptops of 2022
                                 </a>
                             </h3>
@@ -168,14 +174,14 @@
                 <li>
                     <article class="listing__article">
                         <img
-                            src="./assets/images/articles/image-top-laptops.jpg"
+                            src="./assets/images/articles/image-gaming-growth.jpg"
                             alt=""
                             class="article__image"
                         />
                         <div class="article__body">
                             <span class="article__tag">03</span>
                             <h3>
-                                <a class="title" href="">
+                                <a class="title link" href="">
                                     The Growth of Gaming
                                 </a>
                             </h3>

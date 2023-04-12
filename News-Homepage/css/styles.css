@@ -77,6 +77,7 @@ html {
 body {
     background: var(--clr-neutral-white);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Reusable Styles */
@@ -288,6 +289,7 @@ main > * ~ * {
 /* Article Listing */
 .listing {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     gap: var(--spacing);
 }
 
@@ -317,4 +319,58 @@ main > * ~ * {
 
 .article__body .title {
     font-size: var(--fz-100);
+}
+
+@media screen and (min-width: 600px) {
+    .nav {
+        position: relative;
+        inset: auto;
+        backdrop-filter: none;
+    }
+
+    .nav__list {
+        width: 100%;
+        padding-inline-start: 0;
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav__link {
+        color: var(--clr-neutral-blue-400);
+        font-weight: 400;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    :root {
+        --spacing: 3rem;
+    }
+
+    .main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .listing {
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    :root {
+        --spacing: 4rem;
+    }
+
+    .main {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .hero__body {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero__body > .title {
+        font-size: var(--fz-600);
+    }
 }

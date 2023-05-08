@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-greyish-blue-50: hsl(240, 78%, 98%);
+  --clr-greyish-blue-100: hsl(234, 14%, 74%);
+  --clr-greyish-blue-200: hsl(233, 13%, 49%);
+  --clr-greyish-blue-300: hsl(232, 13%, 33%);
+
+  --gradient-primary: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+
+  --font-family: 'Montserrat', sans-serif;
+
+  --fz-50: 0.85rem;
+  --fz-100: 1rem;
+  --fz-200: 1.125rem;
+  --fz-300: 1.25rem;
+  --fz-400: 1.5rem;
+  --fz-500: 2rem;
+  --fz-600: 3rem;
+}
+
+html {
+  font-family: var(--font-family);
+  color: var(--clr-greyish-blue-300);
+}
+
+h1,
+h2 {
+  font-size: var(--fz-100);
+  font-weight: 400;
+}
+
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: 1px solid transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Reusable */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

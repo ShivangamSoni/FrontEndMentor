@@ -76,9 +76,9 @@ button {
 body {
   min-height: 100vh;
   background: var(--clr-greyish-blue-50);
-  background-image: url(../assets/bg-bottom.svg), url(../assets/bg-top.svg);
   background-repeat: no-repeat;
-  background-position: bottom left, top right;
+  background-image: url(../assets/bg-top.svg);
+  background-position: calc(100% + 10rem) top;
 }
 
 /* Main */
@@ -111,6 +111,11 @@ body {
   letter-spacing: 1px;
 }
 
+.plan__btn:hover,
+.plan__btn:focus-visible {
+  text-decoration: 1px solid currentColor underline;
+}
+
 .planToggle {
   display: flex;
   height: 200%;
@@ -134,6 +139,11 @@ body {
 
 .planToggle > input:checked + .toggle > .toggle__ball {
   transform: translateX(100%);
+}
+
+.toggle:hover,
+.planToggle > input:focus-visible + .toggle {
+  filter: opacity(65%);
 }
 
 /* Pricing */
@@ -259,4 +269,36 @@ body {
 .priceCard--focus > .priceCard__btn:focus-visible {
   color: white;
   background-position: top right;
+}
+
+@media screen and (min-width: 45rem) {
+  body {
+    background-image: url(../assets/bg-bottom.svg), url(../assets/bg-top.svg);
+    background-position: bottom left, top right;
+  }
+
+  .pricing {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 65rem) {
+  .main {
+    gap: 3rem;
+  }
+
+  .pricing {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .priceCard--focus {
+    transform: translateY(-2rem) scaleX(1.05);
+    padding-block: 4rem;
+  }
+
+  .priceCard__features > li {
+    padding-block: 1.25rem;
+  }
 }

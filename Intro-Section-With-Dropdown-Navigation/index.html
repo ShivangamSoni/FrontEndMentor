@@ -31,51 +31,77 @@
       <nav>
         <ul class="nav">
           <li class="nav__item nav__dropdown">
-            <button type="button" class="nav__link dropdown__btn">
+            <button
+              type="button"
+              class="nav__link dropdown__btn"
+              aria-expanded="false"
+              aria-controls="features-dropdown"
+              id="features-toggle"
+            >
               Features
             </button>
-            <ul class="dropdown__list">
-              <li class="dropdown__item">
-                <a href="#" class="nav__link">
-                  <img src="./assets/icons/todo.svg" alt="" />
-                  Todo List
-                </a>
-              </li>
-              <li class="dropdown__item">
-                <a href="#" class="nav__link">
-                  <img src="./assets/icons/calendar.svg" alt="" />
-                  Calendar
-                </a>
-              </li>
-              <li class="dropdown__item">
-                <a href="#" class="nav__link">
-                  <img src="./assets/icons/reminders.svg" alt="" />
-                  Reminders
-                </a>
-              </li>
-              <li class="dropdown__item">
-                <a href="#" class="nav__link">
-                  <img src="./assets/icons/planning.svg" alt="" />
-                  Planning
-                </a>
-              </li>
-            </ul>
+            <div
+              class="dropdown"
+              id="features-dropdown"
+              aria-hidden="true"
+              aria-labelledby="features-toggle"
+            >
+              <ul class="dropdown__list">
+                <li class="dropdown__item">
+                  <a href="#" class="nav__link">
+                    <img src="./assets/icons/todo.svg" alt="" />
+                    Todo List
+                  </a>
+                </li>
+                <li class="dropdown__item">
+                  <a href="#" class="nav__link">
+                    <img src="./assets/icons/calendar.svg" alt="" />
+                    Calendar
+                  </a>
+                </li>
+                <li class="dropdown__item">
+                  <a href="#" class="nav__link">
+                    <img src="./assets/icons/reminders.svg" alt="" />
+                    Reminders
+                  </a>
+                </li>
+                <li class="dropdown__item">
+                  <a href="#" class="nav__link">
+                    <img src="./assets/icons/planning.svg" alt="" />
+                    Planning
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="nav__item nav__dropdown">
-            <button type="button" class="nav__link dropdown__btn">
+            <button
+              type="button"
+              class="nav__link dropdown__btn"
+              aria-expanded="false"
+              aria-controls="company-dropdown"
+              id="company-toggle"
+            >
               Company
             </button>
-            <ul class="dropdown__list">
-              <li class="dropdown__item">
-                <a href="#" class="nav__link">History</a>
-              </li>
-              <li class="dropdown__item">
-                <a href="#" class="nav__link">Our Team</a>
-              </li>
-              <li class="dropdown__item">
-                <a href="#" class="nav__link">Blog</a>
-              </li>
-            </ul>
+            <div
+              class="dropdown"
+              id="company-dropdown"
+              aria-hidden="true"
+              aria-labelledby="company-toggle"
+            >
+              <ul class="dropdown__list">
+                <li class="dropdown__item">
+                  <a href="#" class="nav__link">History</a>
+                </li>
+                <li class="dropdown__item">
+                  <a href="#" class="nav__link">Our Team</a>
+                </li>
+                <li class="dropdown__item">
+                  <a href="#" class="nav__link">Blog</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="nav__item">
             <a href="#" class="nav__link">Careers</a>
@@ -87,10 +113,10 @@
 
         <ul class="nav__actions">
           <li>
-            <a href="#" class="action__items">Login</a>
+            <a href="#" class="nav__link">Login</a>
           </li>
           <li>
-            <a href="#" class="action__items">Register</a>
+            <a href="#" class="nav__link nav__link--outline">Register</a>
           </li>
         </ul>
       </nav>
@@ -98,13 +124,15 @@
 
     <main class="main">
       <section class="hero__section">
-        <div>
-          <h2 class="title">Make remote work</h2>
-          <p class="hero__para">
-            Get your team in sync, no matter your location. Streamline
-            processes, create team rituals, and watch productivity soar.
-          </p>
-          <button class="hero__btn">Learn More</button>
+        <div class="hero__content">
+          <div class="hero__info">
+            <h2 class="title">Make remote&nbsp;work</h2>
+            <p class="para">
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <button class="btn">Learn more</button>
+          </div>
           <ul class="clients" title="Our Top Clients">
             <li class="clients__item">
               <img src="./assets/client/databiz.svg" alt="Databiz" />

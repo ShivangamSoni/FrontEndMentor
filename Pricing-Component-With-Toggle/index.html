@@ -19,6 +19,8 @@
     />
     <!-- Style -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Script -->
+    <script src="./scripts/app.js" defer></script>
     <title>Frontend Mentor | Pricing Component with Toggle</title>
   </head>
   <body>
@@ -26,7 +28,10 @@
       <h1 class="title">Our Pricing</h1>
 
       <div class="plan">
-        <button class="plan__btn">Annually</button>
+        <button class="plan__btn" id="plan_annual">
+          <span class="sr-only">Switch to</span>
+          Annually
+        </button>
         <label for="priceToggle" class="planToggle">
           <span class="sr-only">Switch to Annually</span>
           <input type="checkbox" name="priceType" id="priceToggle" />
@@ -34,7 +39,10 @@
             <span class="toggle__ball"></span>
           </span>
         </label>
-        <button class="plan__btn">Monthly</button>
+        <button class="plan__btn" id="plan_month">
+          <span class="sr-only">Switch to</span>
+          Monthly
+        </button>
       </div>
 
       <ul class="pricing">

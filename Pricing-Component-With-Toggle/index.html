@@ -26,13 +26,15 @@
       <h1 class="title">Our Pricing</h1>
 
       <div class="plan">
-        Annually
+        <button class="plan__btn">Annually</button>
         <label for="priceToggle" class="planToggle">
           <span class="sr-only">Switch to Annually</span>
           <input type="checkbox" name="priceType" id="priceToggle" />
-          <span class="toggle"></span>
+          <span class="toggle">
+            <span class="toggle__ball"></span>
+          </span>
         </label>
-        Monthly
+        <button class="plan__btn">Monthly</button>
       </div>
 
       <ul class="pricing">
@@ -40,8 +42,9 @@
           <article class="priceCard">
             <h2 class="title">Basic</h2>
             <div class="priceCard__price">
-              <span> Price </span>
-              &dollar;19.99
+              <span class="sr-only">Price</span>
+              &dollar;
+              <span class="price__value">199.99</span>
             </div>
 
             <ul class="priceCard__features">
@@ -58,8 +61,9 @@
           <article class="priceCard priceCard--focus">
             <h2 class="title">Professional</h2>
             <div class="priceCard__price">
-              <span>Price</span>
-              &dollar;24.99
+              <span class="sr-only">Price</span>
+              &dollar;
+              <span class="price__value">249.99</span>
             </div>
 
             <ul class="priceCard__features">
@@ -76,8 +80,9 @@
           <article class="priceCard">
             <h2 class="title">Master</h2>
             <div class="priceCard__price">
-              <span>Price</span>
-              &dollar;39.99
+              <span class="sr-only">Price</span>
+              &dollar;
+              <span class="price__value">399.99</span>
             </div>
 
             <ul class="priceCard__features">

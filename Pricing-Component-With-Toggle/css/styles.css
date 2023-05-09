@@ -11,6 +11,8 @@
   --clr-greyish-blue-100: hsl(234, 14%, 74%);
   --clr-greyish-blue-200: hsl(233, 13%, 49%);
   --clr-greyish-blue-300: hsl(232, 13%, 33%);
+  --clr-purple-100: hsl(236, 72%, 79%);
+  --clr-purple-200: hsl(237, 63%, 64%);
 
   --gradient-primary: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
 
@@ -23,6 +25,7 @@
   --fz-400: 1.5rem;
   --fz-500: 2rem;
   --fz-600: 3rem;
+  --fz-700: 4rem;
 }
 
 html {
@@ -34,6 +37,11 @@ h1,
 h2 {
   font-size: var(--fz-100);
   font-weight: 400;
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 input,
@@ -56,4 +64,199 @@ button {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.title {
+  color: var(--clr-greyish-blue-200);
+  font-weight: 700;
+  font-size: var(--fz-500);
+}
+
+/* Body */
+body {
+  min-height: 100vh;
+  background: var(--clr-greyish-blue-50);
+  background-image: url(../assets/bg-bottom.svg), url(../assets/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: bottom left, top right;
+}
+
+/* Main */
+.main {
+  min-height: 100vh;
+  width: min(1050px, 90%);
+  margin-inline: auto;
+  padding-block: 4.5rem;
+
+  display: grid;
+  align-content: start;
+  gap: 3.5rem;
+
+  text-align: center;
+}
+
+/* Plan */
+.plan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.plan__btn {
+  background-color: transparent;
+  color: var(--clr-greyish-blue-100);
+  font-size: var(--fz-50);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.planToggle {
+  display: flex;
+  height: 200%;
+  cursor: pointer;
+}
+
+.toggle {
+  display: flex;
+  width: 3.5rem;
+  padding: 0.25rem;
+  background-image: linear-gradient(to right, var(--gradient-primary));
+  border-radius: 100vmax;
+}
+
+.toggle__ball {
+  background-color: white;
+  width: 1.5rem;
+  border-radius: 100%;
+  transition: transform 350ms linear;
+}
+
+.planToggle > input:checked + .toggle > .toggle__ball {
+  transform: translateX(100%);
+}
+
+/* Pricing */
+.pricing {
+  display: grid;
+  align-content: start;
+  gap: 2.5rem;
+
+  margin-block-start: 2rem;
+}
+
+.priceCard {
+  display: grid;
+  align-content: start;
+  gap: 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+
+  background-color: white;
+
+  box-shadow: 0 5px 1rem -0.5rem var(--clr-purple-100);
+}
+
+.priceCard > .title {
+  font-size: var(--fz-200);
+}
+
+.priceCard__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15ch;
+
+  font-weight: 700;
+  font-size: var(--fz-500);
+  color: var(--clr-greyish-blue-300);
+}
+
+.price__value {
+  font-size: var(--fz-700);
+}
+
+.priceCard__features {
+  display: grid;
+  align-content: start;
+}
+
+.priceCard__features > li {
+  --b-clr: var(--clr-greyish-blue-100);
+
+  padding-block: 1rem;
+  border-top: 1px solid var(--b-clr);
+
+  color: var(--clr-greyish-blue-200);
+  font-weight: 700;
+  font-size: var(--fz-50);
+}
+
+.priceCard__features > li:last-child {
+  border-bottom: 1px solid var(--b-clr);
+}
+
+.priceCard__btn {
+  padding-block: 0.85rem;
+  border-radius: 5px;
+
+  font-weight: 600;
+  font-size: var(--fz-100);
+
+  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 50%,
+    var(--clr-purple-100) 50%,
+    var(--clr-purple-200) 100%
+  );
+  background-size: 200% 100%;
+  background-position: top right;
+  color: var(--clr-greyish-blue-50);
+
+  transition: color 350ms linear, background 500ms linear;
+}
+
+.priceCard__btn:hover,
+.priceCard__btn:focus-visible {
+  color: var(--clr-purple-200);
+  outline: 1px solid currentColor;
+  background-position: top left;
+}
+
+.priceCard--focus {
+  background-image: linear-gradient(to bottom, var(--gradient-primary));
+}
+
+.priceCard--focus > .title {
+  color: white;
+}
+
+.priceCard--focus > .priceCard__price {
+  color: white;
+}
+
+.priceCard--focus > .priceCard__features > li {
+  --b-clr: var(--clr-purple-100);
+
+  color: white;
+}
+
+.priceCard--focus > .priceCard__btn {
+  background-image: linear-gradient(
+    to right,
+    white 0%,
+    white 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  background-position: top left;
+  color: var(--clr-purple-200);
+}
+
+.priceCard--focus > .priceCard__btn:hover,
+.priceCard--focus > .priceCard__btn:focus-visible {
+  color: white;
+  background-position: top right;
 }

@@ -9,7 +9,127 @@
       sizes="32x32"
       href="./assets/icons/favicon-32x32.png"
     />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Font: 'Epilogue', sans-serif -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <h1>
+        <span class="sr-only">Snap</span>
+        <img src="./assets/logo.svg" alt="Snap Logo" />
+      </h1>
+
+      <nav>
+        <ul class="nav">
+          <li class="nav__item nav__dropdown">
+            <button type="button" class="nav__link dropdown__btn">
+              Features
+            </button>
+            <ul class="dropdown__list">
+              <li class="dropdown__item">
+                <a href="#" class="nav__link">
+                  <img src="./assets/icons/todo.svg" alt="" />
+                  Todo List
+                </a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="nav__link">
+                  <img src="./assets/icons/calendar.svg" alt="" />
+                  Calendar
+                </a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="nav__link">
+                  <img src="./assets/icons/reminders.svg" alt="" />
+                  Reminders
+                </a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="nav__link">
+                  <img src="./assets/icons/planning.svg" alt="" />
+                  Planning
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item nav__dropdown">
+            <button type="button" class="nav__link dropdown__btn">
+              Company
+            </button>
+            <ul class="dropdown__list">
+              <li class="dropdown__item">
+                <a href="#" class="nav__link">History</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="nav__link">Our Team</a>
+              </li>
+              <li class="dropdown__item">
+                <a href="#" class="nav__link">Blog</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Careers</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">About</a>
+          </li>
+        </ul>
+
+        <ul class="nav__actions">
+          <li>
+            <a href="#" class="action__items">Login</a>
+          </li>
+          <li>
+            <a href="#" class="action__items">Register</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero__section">
+        <div>
+          <h2 class="title">Make remote work</h2>
+          <p class="hero__para">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <button class="hero__btn">Learn More</button>
+          <ul class="clients" title="Our Top Clients">
+            <li class="clients__item">
+              <img src="./assets/client/databiz.svg" alt="Databiz" />
+            </li>
+            <li class="clients__item">
+              <img src="./assets/client/audiophile.svg" alt="Audiophile" />
+            </li>
+            <li class="clients__item">
+              <img src="./assets/client/meet.svg" alt="Meet" />
+            </li>
+            <li class="clients__item">
+              <img src="./assets/client/maker.svg" alt="Maker" />
+            </li>
+          </ul>
+        </div>
+        <div class="hero__bg">
+          <picture>
+            <source
+              media="(max-width: 640px)"
+              srcset="./assets/hero-mobile.png"
+            />
+            <img src="./assets/hero-desktop.png" alt="" />
+          </picture>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

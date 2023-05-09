@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Theme */
+:root {
+  --clr-white: hsl(0, 0%, 98%);
+  --clr-grey: hsl(0, 0%, 41%);
+  --clr-black: hsl(0, 0%, 8%);
+
+  --font-primary: 'Epilogue', sans-serif;
+
+  --fz-50: 1rem;
+  --fz-100: 1.125rem;
+  --fz-200: 1.25rem;
+  --fz-300: 1.5rem;
+  --fz-400: 2rem;
+  --fz-500: 2.5rem;
+  --fz-600: 3rem;
+  --fz-700: 4rem;
+  --fz-800: 5rem;
+}
+
+/* Reset */
+h1,
+h2,
+p {
+  font-size: var(--fz-100);
+  color: var(--clr-black);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+a,
+button {
+  cursor: pointer;
+  border: none;
+  outline: 1px solid transparent;
+  font: inherit;
+}
+
+html {
+  font-family: var(--font-primary);
+}
+
+/* Reusable */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  background: var(--clr-white);
+  min-height: 100vh;
+}

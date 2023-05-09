@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/icons/favicon-32x32.png"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Font: 'Epilogue', sans-serif -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- Script -->
+    <script src="./scripts/app.js" defer></script>
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>
+        <span class="sr-only">Snap</span>
+        <img src="./assets/logo.svg" alt="Snap Logo" />
+      </h1>
+
+      <button class="nav__hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Open Menu</span>
+      </button>
+
+      <div class="nav__container" aria-expanded="false">
+        <nav>
+          <ul class="nav">
+            <li class="nav__item nav__dropdown">
+              <button
+                type="button"
+                class="nav__link dropdown__btn"
+                aria-expanded="false"
+                aria-controls="features-dropdown"
+                id="features-toggle"
+              >
+                Features
+              </button>
+              <div
+                class="dropdown"
+                id="features-dropdown"
+                aria-hidden="true"
+                aria-labelledby="features-toggle"
+              >
+                <ul class="dropdown__list">
+                  <li class="dropdown__item">
+                    <a href="#" class="nav__link">
+                      <img src="./assets/icons/todo.svg" alt="" />
+                      Todo List
+                    </a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="nav__link">
+                      <img src="./assets/icons/calendar.svg" alt="" />
+                      Calendar
+                    </a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="nav__link">
+                      <img src="./assets/icons/reminders.svg" alt="" />
+                      Reminders
+                    </a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="nav__link">
+                      <img src="./assets/icons/planning.svg" alt="" />
+                      Planning
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav__item nav__dropdown">
+              <button
+                type="button"
+                class="nav__link dropdown__btn"
+                aria-expanded="false"
+                aria-controls="company-dropdown"
+                id="company-toggle"
+              >
+                Company
+              </button>
+              <div
+                class="dropdown"
+                id="company-dropdown"
+                aria-hidden="true"
+                aria-labelledby="company-toggle"
+              >
+                <ul class="dropdown__list">
+                  <li class="dropdown__item">
+                    <a href="#" class="nav__link">History</a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="nav__link">Our Team</a>
+                  </li>
+                  <li class="dropdown__item">
+                    <a href="#" class="nav__link">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Careers</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">About</a>
+            </li>
+          </ul>
+
+          <ul class="nav__actions">
+            <li>
+              <a href="#" class="nav__link">Login</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link nav__link--outline">Register</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero__section">
+        <div class="hero__content">
+          <div class="hero__info">
+            <h2 class="title">Make remote&nbsp;work</h2>
+            <p class="para">
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <button class="btn">Learn more</button>
+          </div>
+          <ul class="clients" title="Our Top Clients">
+            <li class="clients__item">
+              <img src="./assets/client/databiz.svg" alt="Databiz" />
+            </li>
+            <li class="clients__item">
+              <img src="./assets/client/audiophile.svg" alt="Audiophile" />
+            </li>
+            <li class="clients__item">
+              <img src="./assets/client/meet.svg" alt="Meet" />
+            </li>
+            <li class="clients__item">
+              <img src="./assets/client/maker.svg" alt="Maker" />
+            </li>
+          </ul>
+        </div>
+        <div class="hero__bg">
+          <picture>
+            <source
+              media="(max-width: 50rem)"
+              srcset="./assets/hero-mobile.png"
+            />
+            <img src="./assets/hero-desktop.png" alt="" />
+          </picture>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

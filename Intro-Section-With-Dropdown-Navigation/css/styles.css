@@ -119,11 +119,13 @@ body {
 }
 
 /* Nav */
-.nav__container {
+#nav {
   flex: 1;
 }
 
-.nav__container > nav {
+.nav__container {
+  flex: 1;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -301,7 +303,7 @@ body {
 
 @media screen and (max-width: 50rem) {
   /* Nav */
-  .nav__container {
+  #nav {
     position: fixed;
     inset: 0;
     backdrop-filter: brightness(50%);
@@ -310,11 +312,11 @@ body {
     transition: transform 1000ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
   }
 
-  .nav__container[aria-expanded='true'] {
+  #nav[aria-expanded='true'] {
     transform: translateX(0);
   }
 
-  .nav__container > nav {
+  .nav__container {
     width: 70%;
     margin-inline-start: auto;
     padding-block: 6rem;

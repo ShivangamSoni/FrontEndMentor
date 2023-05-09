@@ -37,8 +37,8 @@
         <span class="sr-only">Open Menu</span>
       </button>
 
-      <div class="nav__container" aria-expanded="false">
-        <nav>
+      <nav id="nav" aria-expanded="false">
+        <div class="nav__container">
           <ul class="nav">
             <li class="nav__item nav__dropdown">
               <button
@@ -58,25 +58,45 @@
               >
                 <ul class="dropdown__list">
                   <li class="dropdown__item">
-                    <a href="#" class="nav__link">
+                    <a
+                      href="#"
+                      class="nav__link"
+                      aria-hidden="true"
+                      tabindex="-1"
+                    >
                       <img src="./assets/icons/todo.svg" alt="" />
                       Todo List
                     </a>
                   </li>
                   <li class="dropdown__item">
-                    <a href="#" class="nav__link">
+                    <a
+                      href="#"
+                      class="nav__link"
+                      aria-hidden="true"
+                      tabindex="-1"
+                    >
                       <img src="./assets/icons/calendar.svg" alt="" />
                       Calendar
                     </a>
                   </li>
                   <li class="dropdown__item">
-                    <a href="#" class="nav__link">
+                    <a
+                      href="#"
+                      class="nav__link"
+                      aria-hidden="true"
+                      tabindex="-1"
+                    >
                       <img src="./assets/icons/reminders.svg" alt="" />
                       Reminders
                     </a>
                   </li>
                   <li class="dropdown__item">
-                    <a href="#" class="nav__link">
+                    <a
+                      href="#"
+                      class="nav__link"
+                      aria-hidden="true"
+                      tabindex="-1"
+                    >
                       <img src="./assets/icons/planning.svg" alt="" />
                       Planning
                     </a>
@@ -102,13 +122,31 @@
               >
                 <ul class="dropdown__list">
                   <li class="dropdown__item">
-                    <a href="#" class="nav__link">History</a>
+                    <a
+                      href="#"
+                      class="nav__link"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      >History</a
+                    >
                   </li>
                   <li class="dropdown__item">
-                    <a href="#" class="nav__link">Our Team</a>
+                    <a
+                      href="#"
+                      class="nav__link"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      >Our Team</a
+                    >
                   </li>
                   <li class="dropdown__item">
-                    <a href="#" class="nav__link">Blog</a>
+                    <a
+                      href="#"
+                      class="nav__link"
+                      aria-hidden="true"
+                      tabindex="-1"
+                      >Blog</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -129,8 +167,8 @@
               <a href="#" class="nav__link nav__link--outline">Register</a>
             </li>
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
 
     <main class="main">

@@ -16,7 +16,15 @@ DropDownMenu.prototype.toggleMenu = function () {
 
   this.open = !this.open;
   if (this.open) {
-    this.root.dispatchEvent(new CustomEvent('open', { detail: this }));
+    this.dropdown.querySelectorAll('a').forEach((node) => {
+      node.setAttribute('aria-hidden', false);
+      node.setAttribute('tabindex', '0');
+    });
+  } else {
+    this.dropdown.querySelectorAll('a').forEach((node) => {
+      node.setAttribute('aria-hidden', true);
+      node.setAttribute('tabindex', '-1');
+    });
   }
 };
 
@@ -32,7 +40,7 @@ document
   .forEach((dropdown) => new DropDownMenu(dropdown));
 
 const navBtn = document.querySelector('.nav__hamburger');
-const navBar = document.querySelector('.nav__container');
+const navBar = document.querySelector('#nav');
 
 const mobileMediaQuery = window.matchMedia('(max-width: 50rem)');
 let isMobile = mobileMediaQuery.matches;

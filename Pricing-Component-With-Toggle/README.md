@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution](https://github.com/ShivangamSoni/FrontEndMentor/tree/main/News-Homepage)
-- [Live Demo](https://ShivangamSoni.github.io/FrontEndMentor/News-Homepage)
+- [Solution](https://github.com/ShivangamSoni/FrontEndMentor/tree/main/Pricing-Component-With-Toggle)
+- [Live Demo](https://ShivangamSoni.github.io/FrontEndMentor/Pricing-Component-With-Toggle)
 
 ## My process
 

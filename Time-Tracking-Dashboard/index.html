@@ -28,7 +28,9 @@
 
         <article class="dashboard__profile">
           <div class="profile__user">
-            <img src="./assets/user.png" alt="" class="user__image" />
+            <div class="user__image">
+              <img src="./assets/user.png" alt="" />
+            </div>
             <div class="user__info">
               <span>Report for</span>
               <h2 class="title">Jeremy Robson</h2>
@@ -38,142 +40,214 @@
           <fieldset class="profile__actions">
             <legend class="sr-only">Time Frames</legend>
             <label class="action" for="time_daily">
-              <input type="radio" name="timeframe" id="time_daily" />
+              <input
+                type="radio"
+                name="timeframe"
+                id="time_daily"
+                class="sr-only"
+              />
               <span class="action__label">Daily</span>
             </label>
             <label class="action" for="time_weekly">
-              <input type="radio" name="timeframe" id="time_weekly" />
+              <input
+                type="radio"
+                name="timeframe"
+                id="time_weekly"
+                class="sr-only"
+              />
               <span class="action__label">Weekly</span>
             </label>
             <label class="action" for="time_monthly">
-              <input type="radio" name="timeframe" id="time_monthly" />
+              <input
+                type="radio"
+                name="timeframe"
+                id="time_monthly"
+                class="sr-only"
+              />
               <span class="action__label">Monthly</span>
             </label>
           </fieldset>
         </article>
 
-        <ul class="timeframes">
-          <li>
-            <article class="timeframe">
-              <div class="timeframe__head timeframe__head--orange">
-                <img src="./assets/icons/work.svg" alt="" />
-              </div>
-              <div class="timeframe__body">
-                <div class="timeframe__info">
-                  <h3 class="title">Work</h3>
-                  <button class="timeframe__btn">
-                    <span class="sr-only">Options</span>
-                    <img src="./assets/icons/ellipsis.svg" alt="" />
-                  </button>
-                </div>
-                <div class="timeframe__details">
-                  <span class="details__current">32hrs</span>
-                  <span class="details__previous">Last Week - 36hrs</span>
-                </div>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="timeframe">
-              <div class="timeframe__head timeframe__head--blue">
-                <img src="./assets/icons/play.svg" alt="" />
-              </div>
-              <div class="timeframe__body">
-                <div class="timeframe__info">
-                  <h3 class="title">Play</h3>
-                  <button class="timeframe__btn">
-                    <span class="sr-only">Options</span>
-                    <img src="./assets/icons/ellipsis.svg" alt="" />
-                  </button>
-                </div>
-                <div class="timeframe__details">
-                  <span class="details__current">32hrs</span>
-                  <span class="details__previous">Last Week - 36hrs</span>
-                </div>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="timeframe">
-              <div class="timeframe__head timeframe__head--red">
-                <img src="./assets/icons/study.svg" alt="" />
-              </div>
-              <div class="timeframe__body">
-                <div class="timeframe__info">
-                  <h3 class="title">Study</h3>
-                  <button class="timeframe__btn">
-                    <span class="sr-only">Options</span>
-                    <img src="./assets/icons/ellipsis.svg" alt="" />
-                  </button>
-                </div>
-                <div class="timeframe__details">
-                  <span class="details__current">32hrs</span>
-                  <span class="details__previous">Last Week - 36hrs</span>
-                </div>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="timeframe">
-              <div class="timeframe__head timeframe__head--green">
-                <img src="./assets/icons/exercise.svg" alt="" />
-              </div>
-              <div class="timeframe__body">
-                <div class="timeframe__info">
-                  <h3 class="title">Exercise</h3>
-                  <button class="timeframe__btn">
-                    <span class="sr-only">Options</span>
-                    <img src="./assets/icons/ellipsis.svg" alt="" />
-                  </button>
-                </div>
-                <div class="timeframe__details">
-                  <span class="details__current">32hrs</span>
-                  <span class="details__previous">Last Week - 36hrs</span>
-                </div>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="timeframe">
-              <div class="timeframe__head timeframe__head--purple">
-                <img src="./assets/icons/social.svg" alt="" />
-              </div>
-              <div class="timeframe__body">
-                <div class="timeframe__info">
-                  <h3 class="title">Social</h3>
-                  <button class="timeframe__btn">
-                    <span class="sr-only">Options</span>
-                    <img src="./assets/icons/ellipsis.svg" alt="" />
-                  </button>
-                </div>
-                <div class="timeframe__details">
-                  <span class="details__current">32hrs</span>
-                  <span class="details__previous">Last Week - 36hrs</span>
-                </div>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article class="timeframe">
-              <div class="timeframe__head timeframe__head--yellow">
-                <img src="./assets/icons/self-care.svg" alt="" />
-              </div>
-              <div class="timeframe__body">
-                <div class="timeframe__info">
-                  <h3 class="title">Self Care</h3>
-                  <button class="timeframe__btn">
-                    <span class="sr-only">Options</span>
-                    <img src="./assets/icons/ellipsis.svg" alt="" />
-                  </button>
-                </div>
-                <div class="timeframe__details">
-                  <span class="details__current">32hrs</span>
-                  <span class="details__previous">Last Week - 36hrs</span>
-                </div>
-              </div>
-            </article>
-          </li>
-        </ul>
+        <article class="timeframe">
+          <div class="timeframe__head timeframe__head--orange">
+            <img src="./assets/icons/work.svg" alt="" />
+          </div>
+          <div class="timeframe__body">
+            <div class="timeframe__info">
+              <h3 class="title">Work</h3>
+              <button class="timeframe__btn">
+                <span class="sr-only">Options</span>
+                <svg
+                  aria-hidden="true"
+                  width="21"
+                  height="5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="timeframe__details">
+              <span class="details__current">32hrs</span>
+              <span class="details__previous">Last Week - 36hrs</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeframe">
+          <div class="timeframe__head timeframe__head--blue">
+            <img src="./assets/icons/play.svg" alt="" />
+          </div>
+          <div class="timeframe__body">
+            <div class="timeframe__info">
+              <h3 class="title">Play</h3>
+              <button class="timeframe__btn">
+                <span class="sr-only">Options</span>
+                <svg
+                  aria-hidden="true"
+                  width="21"
+                  height="5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="timeframe__details">
+              <span class="details__current">32hrs</span>
+              <span class="details__previous">Last Week - 36hrs</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeframe">
+          <div class="timeframe__head timeframe__head--red">
+            <img src="./assets/icons/study.svg" alt="" />
+          </div>
+          <div class="timeframe__body">
+            <div class="timeframe__info">
+              <h3 class="title">Study</h3>
+              <button class="timeframe__btn">
+                <span class="sr-only">Options</span>
+                <svg
+                  aria-hidden="true"
+                  width="21"
+                  height="5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="timeframe__details">
+              <span class="details__current">32hrs</span>
+              <span class="details__previous">Last Week - 36hrs</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeframe">
+          <div class="timeframe__head timeframe__head--green">
+            <img src="./assets/icons/exercise.svg" alt="" />
+          </div>
+          <div class="timeframe__body">
+            <div class="timeframe__info">
+              <h3 class="title">Exercise</h3>
+              <button class="timeframe__btn">
+                <span class="sr-only">Options</span>
+                <svg
+                  aria-hidden="true"
+                  width="21"
+                  height="5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="timeframe__details">
+              <span class="details__current">32hrs</span>
+              <span class="details__previous">Last Week - 36hrs</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeframe">
+          <div class="timeframe__head timeframe__head--purple">
+            <img src="./assets/icons/social.svg" alt="" />
+          </div>
+          <div class="timeframe__body">
+            <div class="timeframe__info">
+              <h3 class="title">Social</h3>
+              <button class="timeframe__btn">
+                <span class="sr-only">Options</span>
+                <svg
+                  aria-hidden="true"
+                  width="21"
+                  height="5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="timeframe__details">
+              <span class="details__current">32hrs</span>
+              <span class="details__previous">Last Week - 36hrs</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeframe">
+          <div class="timeframe__head timeframe__head--yellow">
+            <img src="./assets/icons/self-care.svg" alt="" />
+          </div>
+          <div class="timeframe__body">
+            <div class="timeframe__info">
+              <h3 class="title">Self Care</h3>
+              <button class="timeframe__btn">
+                <span class="sr-only">Options</span>
+                <svg
+                  aria-hidden="true"
+                  width="21"
+                  height="5"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="timeframe__details">
+              <span class="details__current">32hrs</span>
+              <span class="details__previous">Last Week - 36hrs</span>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
   </body>

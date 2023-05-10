@@ -1,0 +1,56 @@
+# Frontend Mentor - Time tracking dashboard solution
+
+This is a solution to the
+[Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw).
+Frontend Mentor challenges help you improve your coding skills by building
+realistic projects.
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Switch between viewing Daily, Weekly, and Monthly stats
+
+### Screenshot
+
+| Screenshots                    |
+| ------------------------------ |
+| ![](./screenshots/Desktop.png) |
+| ![](./screenshots/2.png)       |
+| ![](./screenshots/3.png)       |
+| ![](./screenshots/Mobile.png)  |
+
+### Links
+
+- [Solution](https://github.com/ShivangamSoni/FrontEndMentor/tree/main/Time-Tracking-Dashboard)
+- [Live Demo](https://ShivangamSoni.github.io/FrontEndMentor/Time-Tracking-Dashboard)
+
+## My process
+
+### Built with
+
+- Semantic HTML5
+- CSS3
+- JavaScript
+
+## Author
+
+- [Shivangam Soni](https://shivangam-soni.vercel.app/)
+- Frontend Mentor -
+  [@ShivangamSoni](https://www.frontendmentor.io/profile/ShivangamSoni)
+- GitHub - [@ShivangamSoni](https://github.com/ShivangamSoni)
+- LinkedIn - [shivangam-soni](https://www.linkedin.com/in/shivangam-soni/)

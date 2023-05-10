@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-primary-violet: hsl(246, 80%, 60%);
+  --clr-primary-orange: hsl(15, 100%, 70%);
+  --clr-primary-blue: hsl(195, 74%, 62%);
+  --clr-primary-red: hsl(348, 100%, 68%);
+  --clr-primary-green: hsl(145, 58%, 55%);
+  --clr-primary-purple: hsl(264, 64%, 52%);
+  --clr-primary-yellow: hsl(43, 84%, 65%);
+
+  --clr-neutral-white: hsl(0, 100%, 100%);
+  --clr-neutral-blue-100: hsl(236, 100%, 87%);
+  --clr-neutral-blue-200: hsl(235, 45%, 61%);
+  --clr-neutral-blue-300: hsl(235, 46%, 20%);
+  --clr-neutral-blue-400: hsl(226, 43%, 10%);
+
+  --fontFamily: 'Rubik', sans-serif;
+
+  --fz-50: 0.85rem;
+  --fz-100: 1rem;
+  --fz-200: 1.125rem;
+  --fz-300: 1.25rem;
+  --fz-400: 1.5rem;
+  --fz-500: 2rem;
+  --fz-600: 3rem;
+  --fz-700: 5rem;
+}
+
+/* Reset */
+h1,
+h2,
+h3 {
+  font-size: var(--fz-400);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a,
+button,
+input {
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  outline: 1px solid transparent;
+  background: transparent;
+  font: inherit;
+  text-decoration: none;
+}
+
+fieldset {
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+html {
+  font-family: var(--fontFamily);
+  font-size: var(--fz-200);
+  color: var(--clr-neutral-white);
+}
+
+/* Reusable Components */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Body */
+body {
+  background: var(--clr-neutral-blue-400);
+}
+
+/* Main */
+.main {
+  min-height: 100vh;
+}

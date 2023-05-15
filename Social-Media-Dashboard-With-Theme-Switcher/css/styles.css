@@ -201,11 +201,17 @@ header {
 }
 
 .toggle {
+  --toggle-w: 3rem;
+  --toggle-p: 0.2rem;
+  --toggle-h: 1.4rem;
+  --ball-sz: calc(var(--toggle-h) - var(--toggle-p) * 2);
+
   display: flex;
   justify-content: start;
-  width: 50px;
+  width: var(--toggle-w);
+  height: var(--toggle-h);
   border-radius: 100vmax;
-  padding: 2px;
+  padding: var(--toggle-p);
 
   background: var(--bg-toggle);
 }
@@ -216,10 +222,13 @@ header {
 }
 
 .ball {
-  width: 16px;
+  width: var(--ball-sz);
+  height: var(--ball-sz);
   background-color: var(--clr-bg);
   border-radius: 100%;
-  transform: translateX(calc(50px - 16px - 4px));
+  transform: translateX(
+    calc(var(--toggle-w) - var(--ball-sz) - var(--toggle-p) * 2)
+  );
   transition: transform 250ms linear;
 }
 
@@ -230,15 +239,18 @@ header {
 /* Main */
 main {
   --card-gap: 1.5rem;
+  padding-block-end: 2rem;
 }
 
 /* Focus Section */
 .section__focus {
+  --split: 50%;
+
   background-image: linear-gradient(
     to bottom,
     var(--clr-bg-header) 0%,
-    var(--clr-bg-header) 50%,
-    transparent 50%,
+    var(--clr-bg-header) var(--split),
+    transparent var(--split),
     transparent 100%
   );
 }
@@ -370,4 +382,61 @@ main {
 .overview__stat {
   font-size: var(--fz-300);
   font-weight: 700;
+}
+
+@media screen and (max-width: 920px) {
+  .section__focus {
+    --split: 25%;
+  }
+
+  .focus__listing {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .overviews {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .focus__listing {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .overviews {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  html {
+    font-size: 0.9rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 2.5rem;
+
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header__logo {
+    border-bottom: 1px solid var(--clr-text-secondary);
+    padding-block-end: 1rem;
+  }
+
+  .header__toggle {
+    padding-block-start: 1rem;
+    justify-content: space-between;
+  }
+
+  .focus__listing {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .overviews {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

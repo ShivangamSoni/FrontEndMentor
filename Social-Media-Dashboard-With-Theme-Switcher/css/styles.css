@@ -217,7 +217,7 @@ header {
 }
 
 .header__toggle:hover .toggle,
-.header__toggle input:focus + .toggle {
+.header__toggle input:focus-visible + .toggle {
   background: var(--bg-toggle-hover);
 }
 

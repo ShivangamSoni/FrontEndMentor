@@ -9,7 +9,64 @@
       sizes="32x32"
       href="./assets/icons/favicon-32x32.png"
     />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Font: 'Josefin Sans', sans-serif -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>Frontend Mentor | Base Apparel coming soon page</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1 class="sr-only">Base Apparel</h1>
+      <img src="./assets/logo.svg" alt="" />
+    </header>
+    <main>
+      <section class="section__soon">
+        <picture class="soon__img">
+          <source
+            media="(min-width: 520px)"
+            srcset="./assets/hero/desktop.jpg"
+          />
+          <img src="./assets/hero/mobile.jpg" alt="" />
+        </picture>
+
+        <div class="soon__content">
+          <h2 class="title">
+            <span class="fade">WE'RE</span>
+            Coming Soon
+          </h2>
+          <p class="content__info">
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
+          <form class="content__form">
+            <label for="email" class="form__field">
+              <span class="sr-only">Email</span>
+              <input
+                type="email"
+                placeholder="Email Address"
+                name="email"
+                id="email"
+              />
+              <span class="field__icon" aria-hidden="true">
+                <img src="./assets/icons/error.svg" alt="" />
+              </span>
+              <span class="field__error">Error</span>
+            </label>
+            <button class="form__btn">
+              <span class="sr-only">Submit</span>
+              <img src="./assets/icons/arrow.svg" alt="" />
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

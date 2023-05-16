@@ -24,7 +24,7 @@
   <body>
     <header>
       <h1 class="sr-only">Base Apparel</h1>
-      <img src="./assets/logo.svg" alt="" />
+      <img class="logo" src="./assets/logo.svg" alt="" />
     </header>
     <main>
       <section class="section__soon">
@@ -38,10 +38,11 @@
 
         <div class="soon__content">
           <h2 class="title">
-            <span class="fade">WE'RE</span>
-            Coming Soon
+            <span class="fade">WE'RE</span><br />
+            Coming<br />
+            Soon
           </h2>
-          <p class="content__info">
+          <p class="para">
             Hello fellow shoppers! We're currently building our new fashion
             store. Add your email below to stay up-to-date with announcements
             and our launch deals.
@@ -55,10 +56,10 @@
                 name="email"
                 id="email"
               />
-              <span class="field__icon" aria-hidden="true">
+              <span class="field__icon hidden" aria-hidden="true">
                 <img src="./assets/icons/error.svg" alt="" />
               </span>
-              <span class="field__error">Error</span>
+              <span class="field__error" aria-hidden="true">Error</span>
             </label>
             <button class="form__btn">
               <span class="sr-only">Submit</span>

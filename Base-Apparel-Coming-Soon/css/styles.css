@@ -198,6 +198,12 @@ main {
   border-radius: 100vmax;
 
   background: var(--gradient-btn);
+  box-shadow: 0 1rem 1.5rem -0.5rem var(--clr-primary-red-100);
+}
+
+.form__btn:hover,
+.form__btn:focus {
+  filter: brightness(125%) saturate(90%);
 }
 
 .soon__img {

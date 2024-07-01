@@ -102,6 +102,28 @@ main {
     font-weight: 800;
 }
 
+.card__title > a {
+    color: inherit;
+    outline-color: transparent;
+    text-decoration: none;
+
+    background-image: linear-gradient(
+        to right,
+        var(--bg-yellow) 0%,
+        var(--bg-yellow) 50%,
+        transparent 50%,
+        transparent 100%
+    );
+    background-size: 200% 2px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    transition: background-position 250ms linear;
+}
+
+.card__title > a:hover {
+    background-position: left bottom;
+}
+
 .card__desc {
     font-size: var(--fz-100);
     color: var(--text-secondary);

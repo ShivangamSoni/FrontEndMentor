@@ -1,0 +1,45 @@
+/* Resets */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+figure,
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Theme */
+:root {
+    /* Colors */
+    --bg-yellow: #f4d04e;
+    --bg-white: #ffffff;
+
+    --text-primary: #111111;
+    --text-secondary: #7f7f7f;
+
+    /* Font Family */
+    --ff-primary: "Figtree", sans-serif;
+
+    /* Font Size */
+    --fz-50: 0.85rem;
+    --fz-100: 1rem;
+    --fz-200: 1.25rem;
+    --fz-200: 1.5rem;
+    --fz-300: 3rem;
+}
+
+html {
+    font-family: var(--ff-primary);
+}
+
+main {
+    min-height: 100vh;
+    background-color: var(--bg-yellow);
+    color: var(--text-primary);
+    font-size: var(--fz-100);
+}

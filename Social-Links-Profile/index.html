@@ -23,6 +23,9 @@
         <!-- Styles -->
         <link rel="stylesheet" href="./css/styles.css" />
 
+        <!-- Script -->
+        <script src="./scripts/main.js" defer></script>
+
         <title>Frontend Mentor | Social links profile</title>
     </head>
     <body>
@@ -42,49 +45,14 @@
                         <p class="user_desc">Web Developer and avid Gamer.</p>
                     </figcaption>
                 </figure>
-                <ul class="profile_links">
-                    <li>
-                        <a
-                            class="link"
-                            href="https://github.com/ShivangamSoni/"
-                            target="_blank"
-                            >GitHub</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            class="link"
-                            href="https://www.frontendmentor.io/profile/shivangamsoni"
-                            target="_blank"
-                            >Frontend Mentor</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            class="link"
-                            href="https://www.linkedin.com/in/shivangam-soni/"
-                            target="_blank"
-                            >LinkedIn</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            class="link"
-                            href="https://x.com/ShivangamSoni"
-                            target="_blank"
-                            >Twitter / X</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            class="link"
-                            href="https://www.instagram.com/shivangam_soni/"
-                            target="_blank"
-                            >Instagram</a
-                        >
-                    </li>
-                </ul>
+                <ul class="profile_links"></ul>
             </article>
         </main>
+
+        <template id="link_temp">
+            <li>
+                <a class="link" href="" target="_blank"></a>
+            </li>
+        </template>
     </body>
 </html>

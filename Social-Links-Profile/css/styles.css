@@ -32,7 +32,135 @@ html {
 }
 
 main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100vw;
     height: 100vh;
+    padding: 1.25rem;
+
     background: var(--clr-neutral-black);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.85rem;
+    padding: 2.5rem;
+    width: 390px;
+
+    border-radius: 0.75rem;
+    background: var(--clr-neutral-grey300);
+}
+
+.profile_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: inherit;
+}
+
+.user_img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+}
+
+.user_details {
+    text-align: center;
+}
+
+.user_name {
+    font-weight: 700;
+    font-size: var(--fs-200);
+}
+
+.user_address {
+    font-size: var(--fs-50);
+    margin-top: 1.25rem;
+    margin-bottom: 1.85rem;
+
+    font-weight: 600;
+    font-style: normal;
+    color: var(--clr-primary);
+}
+
+.user_desc {
+    font-weight: 400;
+    font-size: var(--fs-50);
+}
+
+.user_desc::before {
+    content: open-quote;
+}
+
+.user_desc::after {
+    content: close-quote;
+}
+
+.profile_links {
+    list-style: none;
+}
+
+.profile_links > li {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_links > li + li {
+    margin-top: 1.25rem;
+}
+
+.link {
+    position: relative;
+
+    font-size: var(--fs-50);
+    padding: 1rem;
+    border-radius: 0.75rem;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    background: var(--clr-neutral-grey100);
+    color: var(--clr-neutral-white);
+
+    overflow: hidden;
+    isolation: isolate;
+
+    transition: color 250ms linear;
+}
+
+.link:hover {
+    color: var(--clr-neutral-grey300);
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--clr-primary);
+
+    transform: scaleX(0);
+    transform-origin: right;
+
+    transition: transform 250ms linear;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+@media screen and (max-width: 420px) {
+    html {
+        font-size: var(--fs-50);
+    }
+
+    .profile {
+        width: 100%;
+        padding: 1.25rem;
+    }
 }

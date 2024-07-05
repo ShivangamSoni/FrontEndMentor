@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Theme */
+    --clr-primary: hsl(75, 94%, 57%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-grey100: hsl(0, 0%, 20%);
+    --clr-neutral-grey300: hsl(0, 0%, 12%);
+    --clr-neutral-black: hsl(0, 0%, 8%);
+
+    /* Font Family */
+    --ff-primary: "Inter", sans-serif;
+
+    /* Font-Size */
+    --fs-50: 0.85rem;
+    --fs-100: 1rem;
+    --fs-150: 1.25rem;
+    --fs-200: 1.5rem;
+    --fs-300: 3rem;
+}
+
+html {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-100);
+    color: var(--clr-neutral-white);
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background: var(--clr-neutral-black);
+}

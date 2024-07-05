@@ -132,8 +132,10 @@ main {
     transition: color 250ms linear;
 }
 
-.link:hover {
+.link:hover,
+.link:focus-visible {
     color: var(--clr-neutral-grey300);
+    outline: transparent;
 }
 
 .link::after {
@@ -149,7 +151,8 @@ main {
     transition: transform 250ms linear;
 }
 
-.link:hover::after {
+.link:hover::after,
+.link:focus-visible::after {
     transform: scaleX(1);
     transform-origin: left;
 }

@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    /* Colors: Primary */
+    --clr-primary-nutmeg: hsl(14, 45%, 36%);
+    --clr-primary-raspberry: hsl(332, 51%, 32%);
+
+    /* Colors: Neutral */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-rose: hsl(330, 100%, 98%);
+    --clr-eggshell: hsl(30, 54%, 90%);
+    --clr-light-grey: hsl(30, 18%, 87%);
+    --clr-brown: hsl(30, 10%, 34%);
+    --clr-chocolate: hsl(24, 5%, 18%);
+    --test: hsl(40, 4%, 16%);
+
+    /* Font Family */
+    --ff-title: "Young Serif", serif;
+    --ff-content: "Outfit", sans-serif;
+
+    /* Font Size */
+    --fs-50: 0.85rem;
+    --fs-100: 1rem;
+    --fs-150: 1.25rem;
+    --fs-200: 1.5rem;
+    --fs-300: 3rem;
+}
+
+html {
+    font-family: var(--ff-content);
+    font-size: var(--fs-100);
+    color: var(--clr-brown);
+}
+
+body {
+    background-color: var(--clr-eggshell);
+}

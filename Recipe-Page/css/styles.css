@@ -143,6 +143,7 @@ ol > li::before {
 .recipe {
     max-width: 740px;
     margin: 8rem auto;
+
     padding: 2.5rem;
     border-radius: 1.25rem;
 
@@ -221,4 +222,33 @@ ol > li::before {
     caption-side: top;
     text-align: left;
     padding-bottom: var(--padding-content);
+}
+
+@media screen and (max-width: 920px) {
+    .recipe {
+        margin: 5rem auto;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .recipe {
+        margin: 0 auto;
+        border-radius: 0;
+        padding: 0;
+        padding-bottom: 2.5rem;
+    }
+
+    .width-wrapper {
+        padding-inline: 2.5rem;
+    }
+
+    .recipe_img {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    html {
+        font-size: var(--fs-50);
+    }
 }

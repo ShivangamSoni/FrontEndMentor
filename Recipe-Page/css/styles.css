@@ -1,16 +1,4 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
+/* Theme */
 :root {
     /* Colors: Primary */
     --clr-primary-nutmeg: hsl(14, 45%, 36%);
@@ -33,16 +21,204 @@ img {
     --fs-50: 0.85rem;
     --fs-100: 1rem;
     --fs-150: 1.25rem;
-    --fs-200: 1.5rem;
-    --fs-300: 3rem;
+    --fs-200: 1.75rem;
+    --fs-300: 2.5rem;
+
+    --padding-content: 0.5rem;
 }
 
+/* Resets */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Common Styles */
+.section {
+    padding-bottom: 2rem;
+}
+
+.section + .section {
+    border-top: 1px solid var(--clr-light-grey);
+    padding-top: 2rem;
+}
+
+.section:last-child {
+    padding-bottom: 0;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.title {
+    font-size: var(--fs-200);
+    color: var(--clr-primary-nutmeg);
+    padding-bottom: var(--padding-content);
+}
+
+.sr-only {
+    /* Reference: https://tailwindcss.com/docs/screen-readers */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Page */
 html {
     font-family: var(--ff-content);
     font-size: var(--fs-100);
     color: var(--clr-brown);
+    line-height: 1.5;
 }
 
 body {
     background-color: var(--clr-eggshell);
+}
+
+h1,
+h2 {
+    font-family: var(--ff-title);
+    font-weight: 400;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding-left: var(--padding-content);
+
+    display: grid;
+    gap: var(--padding-content);
+}
+
+:is(ul, ol) > li {
+    padding-left: 2rem;
+    position: relative;
+}
+
+ul > li::before {
+    content: "";
+
+    width: 4px;
+    height: 4px;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    border-radius: 10000vh;
+
+    background-color: var(--clr-marker, currentColor);
+}
+
+ol > li {
+    counter-increment: list-count;
+}
+
+ol > li::before {
+    content: counter(list-count) ".";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--clr-marker, currentColor);
+    font-weight: 700;
+}
+
+/* Recipe */
+.recipe {
+    max-width: 740px;
+    margin: 8rem auto;
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+
+    background-color: var(--clr-white);
+}
+
+.recipe_header {
+    display: grid;
+    gap: 2rem;
+}
+
+.recipe_img {
+    border-radius: 1rem;
+}
+
+.recipe_title {
+    font-size: var(--fs-300);
+    color: var(--clr-chocolate);
+}
+
+.recipe_prep {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+
+    background-color: var(--clr-rose);
+}
+
+.prep_title {
+    padding-bottom: var(--padding-content);
+
+    font-size: var(--fs-150);
+    font-family: var(--ff-content);
+    font-weight: 600;
+
+    color: var(--clr-primary-raspberry);
+}
+
+.prep_details {
+    --clr-marker: var(--clr-primary-raspberry);
+}
+
+.ingredients {
+    --clr-marker: var(--clr-primary-nutmeg);
+}
+
+.instructions {
+    --clr-marker: var(--clr-primary-nutmeg);
+}
+
+.nutritions {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.nutritions :is(th, td) {
+    border-bottom: 1px solid var(--clr-light-grey);
+    padding: var(--padding-content) 0;
+}
+
+.nutritions tr:last-child :is(th, td) {
+    border-bottom: none;
+}
+
+.nutritions th[scope="row"] {
+    text-align: left;
+    font-weight: 400;
+    padding-left: calc(var(--padding-content) * 4);
+}
+
+.nutritions td.bold {
+    color: var(--clr-primary-nutmeg);
+    padding-right: calc(var(--padding-content) * 4);
+}
+
+.nutrition_desc {
+    caption-side: top;
+    text-align: left;
+    padding-bottom: var(--padding-content);
 }

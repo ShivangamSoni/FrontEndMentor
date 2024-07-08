@@ -32,7 +32,7 @@
     </head>
     <body>
         <main class="recipe">
-            <header class="recipe_header">
+            <header class="recipe_header section">
                 <img
                     src="./assets/images/food/image-omelette.jpeg"
                     alt=""
@@ -49,7 +49,7 @@
                 </p>
 
                 <section class="recipe_prep">
-                    <h2 class="prep_title">Preparation Time</h2>
+                    <h2 class="prep_title">Preparation time</h2>
                     <ul class="prep_details">
                         <li>
                             <span class="bold">Total:</span> Approximately 10
@@ -63,7 +63,7 @@
                 </section>
 
                 <section class="recipe_ingredients">
-                    <h2 class="ingredients_title">Ingredients</h2>
+                    <h2 class="title">Ingredients</h2>
                     <ul class="ingredients">
                         <li>2-3 large eggs</li>
                         <li>Salt, to taste</li>
@@ -77,8 +77,8 @@
                 </section>
             </header>
 
-            <section class="recipe_instructions">
-                <h2 class="instructions_title">Instructions</h2>
+            <section class="recipe_instructions section">
+                <h2 class="title">Instructions</h2>
 
                 <ol class="instructions">
                     <li>
@@ -117,35 +117,38 @@
                 </ol>
             </section>
 
-            <section class="recipe_nutrition">
-                <h2 class="nutrition_title">Nutrition</h2>
-
-                <p class="nutrition_desc">
-                    Nutrition The table below shows nutritional values per
-                    serving without the additional fillings.
-                </p>
+            <section class="recipe_nutrition section">
+                <h2 class="title">Nutrition</h2>
 
                 <table class="nutritions">
-                    <tr>
-                        <th>Nutrient</th>
-                        <th>Amount</th>
-                    </tr>
-                    <tr>
-                        <td>Calories</td>
-                        <td>277kcal</td>
-                    </tr>
-                    <tr>
-                        <td>Carbs</td>
-                        <td>0g</td>
-                    </tr>
-                    <tr>
-                        <td>Protein</td>
-                        <td>20g</td>
-                    </tr>
-                    <tr>
-                        <td>Fat</td>
-                        <td>22g</td>
-                    </tr>
+                    <caption class="nutrition_desc">
+                        The table below shows nutritional values per serving
+                        without the additional fillings.
+                    </caption>
+                    <thead class="sr-only">
+                        <tr>
+                            <th scope="col">Nutrient</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Calories</th>
+                            <td class="bold">277kcal</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Carbs</th>
+                            <td class="bold">0g</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Protein</th>
+                            <td class="bold">20g</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fat</th>
+                            <td class="bold">22g</td>
+                        </tr>
+                    </tbody>
                 </table>
             </section>
         </main>

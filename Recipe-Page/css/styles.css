@@ -150,7 +150,8 @@ ol > li::before {
     background-color: var(--clr-white);
 }
 
-.recipe_header {
+.recipe_header,
+.recipe_header .width-wrapper {
     display: grid;
     gap: 2rem;
 }

@@ -1,0 +1,136 @@
+/* Fonts */
+@font-face {
+    font-family: "Work Sans";
+    src: url("../assets/fonts/WorkSans-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 400 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Work Sans";
+    src: url("../assets/fonts/WorkSans-Italic-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 400 600;
+    font-style: italic;
+}
+
+/* Theme */
+:root {
+    /* Colors */
+    --clr-white: hsl(0, 0%, 100%);
+    --prink-100: hsl(275, 100%, 97%);
+    --pink-400: hsl(281, 83%, 54%);
+    --prink-600: hsl(292, 16%, 49%);
+    --prink-900: hsl(292, 42%, 14%);
+
+    /* Font Family */
+    --ff-primary: "Work Sans", sans-serif;
+
+    /* Font Size */
+    --fs-50: 0.85rem;
+    --fs-100: 1rem;
+    --fs-150: 1.25rem;
+    --fs-200: 1.75rem;
+    --fs-300: 2.5rem;
+}
+
+/* Reset & Global Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    font: inherit;
+    appearance: none;
+}
+
+html {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-100);
+    color: var(--prink-900);
+    line-height: 1.5;
+}
+
+body {
+    background-color: var(--prink-100);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    padding: 2rem;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33%;
+    background-image: url("../assets/images/background-pattern-mobile.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* FAQ Section */
+.faq {
+    max-width: 38rem;
+    padding: 1rem;
+
+    border-radius: 0.75rem;
+    background: var(--clr-white);
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    margin-bottom: 0.25rem;
+    font-size: var(--fs-300);
+    font-weight: 700;
+}
+
+.heading__icon {
+    width: 24px;
+    height: 24px;
+}
+
+.accordion {
+    padding: 1rem 0;
+}
+
+.accordion + .accordion {
+    border-top: 1px solid var(--prink-100);
+}
+
+.accordion__title {
+    font-size: var(--fs-100);
+    font-weight: 700;
+}
+
+.accordion__toggle {
+}
+
+.accordion__text {
+}
+
+/* Remove */
+article > p {
+    display: none;
+}
+
+article:first-of-type > p {
+    display: block !important;
+}

@@ -154,6 +154,7 @@ main::before {
 .accordion__text {
     color: var(--pink-600);
     padding-right: 2rem;
+    transform-origin: top;
 }
 
 .accordion__text[aria-hidden="true"] {

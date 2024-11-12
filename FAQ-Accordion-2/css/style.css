@@ -19,10 +19,10 @@
 :root {
     /* Colors */
     --clr-white: hsl(0, 0%, 100%);
-    --prink-100: hsl(275, 100%, 97%);
+    --pink-100: hsl(275, 100%, 97%);
     --pink-400: hsl(281, 83%, 54%);
-    --prink-600: hsl(292, 16%, 49%);
-    --prink-900: hsl(292, 42%, 14%);
+    --pink-600: hsl(292, 16%, 49%);
+    --pink-900: hsl(292, 42%, 14%);
 
     /* Font Family */
     --ff-primary: "Work Sans", sans-serif;
@@ -51,13 +51,13 @@ button {
 
 html {
     font-family: var(--ff-primary);
-    font-size: var(--fs-100);
-    color: var(--prink-900);
+    font-size: var(--fs-50);
+    color: var(--pink-900);
     line-height: 1.5;
 }
 
 body {
-    background-color: var(--prink-100);
+    background-color: var(--pink-100);
 }
 
 main {
@@ -88,9 +88,9 @@ main::before {
 .faq {
     max-width: 38rem;
     padding: 1rem;
-
     border-radius: 0.75rem;
     background: var(--clr-white);
+    box-shadow: 0 1rem 2rem hsla(0, 0%, 70%, 50%);
 }
 
 .heading {
@@ -112,25 +112,60 @@ main::before {
 }
 
 .accordion + .accordion {
-    border-top: 1px solid var(--prink-100);
+    border-top: 1px solid var(--pink-100);
 }
 
 .accordion__title {
     font-size: var(--fs-100);
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .accordion__toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    text-align: left;
+    cursor: pointer;
+
+    transition: color 150ms linear;
 }
 
-.accordion__text {
+.accordion__toggle:hover,
+.accordion__toggle:focus-visible {
+    color: var(--pink-400);
 }
 
-/* Remove */
-article > p {
+.accordion__toggle[aria-expanded="false"] .toggle__icon--open {
     display: none;
 }
 
-article:first-of-type > p {
-    display: block !important;
+.accordion__toggle[aria-expanded="true"] .toggle__icon--close {
+    display: none;
+}
+
+.accordion__text {
+    color: var(--pink-600);
+    padding-right: 2rem;
+}
+
+.accordion__text[aria-hidden="true"] {
+    display: none;
+}
+
+@media screen and (min-width: 720px) {
+    html {
+        font-size: var(--fs-100);
+    }
+
+    main::before {
+        background-image: url("../assets/images/background-pattern-desktop.svg");
+    }
 }

@@ -24,8 +24,8 @@ This is a solution to the [FAQ Accordion challenge on Frontend Mentor](https://w
 
 ### Links
 
--   [Solution](https://github.com/ShivangamSoni/FrontEndMentor/tree/main/faq-accordion-2)
--   [Live Demo](https://ShivangamSoni.github.io/FrontEndMentor/faq-accordion-2)
+-   [Solution](https://github.com/ShivangamSoni/FrontEndMentor/tree/main/FAQ-Accordion-2)
+-   [Live Demo](https://ShivangamSoni.github.io/FrontEndMentor/FAQ-Accordion-2)
 
 ## My process
 

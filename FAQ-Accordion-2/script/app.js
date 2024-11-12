@@ -32,7 +32,6 @@ class Accordion {
                     easing: "ease-in-out",
                     iterations: 1,
                     direction: "reverse",
-                    fill: "forwards",
                 })
                 .addEventListener("finish", () =>
                     this.content.setAttribute("aria-hidden", !this.open)

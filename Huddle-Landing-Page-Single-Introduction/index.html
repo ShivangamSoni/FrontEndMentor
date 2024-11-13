@@ -10,13 +10,31 @@
             href="./images/favicon-32x32.png"
         />
 
+        <!-- Font: "Poppins", sans-serif -->
+        <!-- Font: "Open Sans", sans-serif -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <link rel="stylesheet" href="./css/style.css" />
         <title>
             Frontend Mentor | Huddle landing page with single introductory
             section
         </title>
     </head>
     <body>
-        <header>
+        <header class="header">
             <h1>
                 <span class="sr-only">Huddle</span>
                 <img src="./images/logo.svg" alt="" />
@@ -45,16 +63,37 @@
             </section>
         </main>
 
-        <footer>
-            <ul>
+        <footer class="footer">
+            <ul class="footer__links">
                 <li>
-                    <a href="" target="_blank">F</a>
+                    <a
+                        href="https://www.linkedin.com/in/shivangam-soni/"
+                        target="_blank"
+                        class="footer__link"
+                    >
+                        <span class="sr-only">Linkedin</span>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
                 </li>
                 <li>
-                    <a href="" target="_blank">X</a>
+                    <a
+                        href="https://x.com/ShivangamSoni"
+                        target="_blank"
+                        class="footer__link"
+                    >
+                        <span class="sr-only">X</span>
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
                 </li>
                 <li>
-                    <a href="" target="_blank">I</a>
+                    <a
+                        href="https://www.instagram.com/shivangam_soni/"
+                        target="_blank"
+                        class="footer__link"
+                    >
+                        <span class="sr-only">Instagram</span>
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
                 </li>
             </ul>
         </footer>

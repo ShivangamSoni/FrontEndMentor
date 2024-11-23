@@ -1,61 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <title>Frontend Mentor | Product list with cart</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <title>Frontend Mentor | Product list with cart</title>
+    </head>
+    <body>
+        <main>
+            <h1>Desserts</h1>
 
-  Desserts
+            <div>
+                <section aria-labelledby="products-heading">
+                    <h2 id="products-heading">Available Desserts</h2>
+                    <ul>
+                        <li>
+                            <picture>
+                                <source
+                                    srcset="
+                                        ./assets/images/image-waffle-desktop.jpg
+                                    "
+                                    media="(min-width: 1024px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./assets/images/image-waffle-tablet.jpg
+                                    "
+                                    media="(min-width: 768px)"
+                                />
+                                <img
+                                    src="./assets/images/image-waffle-mobile.jpg"
+                                    alt=""
+                                />
+                            </picture>
 
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
+                            <div>
+                                <p>Waffle</p>
+                                <h3>Waffel with Berries</h3>
+                                <p aria-label="Price: $6.50">$6.50</p>
+                            </div>
 
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
+                            <button
+                                aria-label="Add Waffel with Berries to cart"
+                            >
+                                <img
+                                    src="./assets/images/icon-add-to-cart.svg"
+                                    alt=""
+                                />
+                                Add to Cart
+                            </button>
+                        </li>
+                    </ul>
+                </section>
 
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
+                <section aria-labelledby="cart-heading">
+                    <h2 id="cart-heading">
+                        Your Cart
+                        <span id="cart-count" aria-live="polite">(0)</span>
+                    </h2>
 
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
-
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
-
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
-
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
-
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
-
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
-
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
-</body>
+                    <div>
+                        <img
+                            src="./assets/images/illustration-empty-cart.svg"
+                            alt=""
+                        />
+                        <p>Your added items will appear here</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
 </html>

@@ -29,8 +29,14 @@ tailwind.config = {
 };
 
 const productItemTemplate = document.querySelector("#product-item-template");
+const cartItemTemplate = document.querySelector("#cart-item-template");
 
-const productsList = document.querySelector("#products");
+const productsList = document.querySelector(".products");
+const cart = document.querySelector(".cart");
+const cartCount = document.querySelector(".cart__count");
+const cartList = document.querySelector(".cart__list");
+const cartTotal = document.querySelector(".cart__total");
+const cartBtn = document.querySelector(".cart__btn");
 
 const ProductStore = {
     products: null,
@@ -45,21 +51,35 @@ const ProductStore = {
 const CartStore = {
     items: [],
     total: 0,
+    qty: 0,
+    callbacks: [],
+    addCB(cb) {
+        this.callbacks.push(cb);
+    },
+    invokeCBs() {
+        this.callbacks.forEach((cb) => cb());
+    },
     addItem(product) {
         product.qty = 1;
         this.total += product.qty * product.price;
+        this.qty += 1;
         this.items.push(product);
+        this.invokeCBs();
         return product;
     },
     deleteItem(product) {
         this.items = this.items.filter((a) => a != product);
         this.total -= product.qty * product.price;
+        this.qty -= product.qty;
         product.qty = 0;
+        this.invokeCBs();
         return product;
     },
     increaseQty(product) {
         product.qty += 1;
+        this.qty += 1;
         this.total += product.price;
+        this.invokeCBs();
         return product;
     },
     decreaseQty(product) {
@@ -67,12 +87,45 @@ const CartStore = {
             return this.deleteItem(product);
         }
         product.qty -= 1;
+        this.qty -= 1;
         this.total -= product.price;
+        this.invokeCBs();
         return product;
     },
 };
 
-function renderCart() {}
+function renderCartItem(product) {
+    const { name, price, qty } = product;
+    const item = cartItemTemplate.content.cloneNode(true);
+    item.querySelector(".item__name").textContent = name;
+    item.querySelector(".item__qty").textContent = `${qty}x`;
+    item.querySelector(".item__price").textContent = `@ $${price.toFixed(2)}`;
+    item.querySelector(".item__total").textContent = `$${(price * qty).toFixed(
+        2
+    )}`;
+    const removeBtn = item.querySelector(".item__remove");
+    removeBtn.querySelector(
+        ".sr-only"
+    ).textContent = `Delete ${name} from cart`;
+    removeBtn.addEventListener("click", () => {
+        CartStore.deleteItem(product);
+    });
+    return item;
+}
+
+function renderCart() {
+    if (CartStore.items.length == 0) {
+        cart.dataset.cartEmpty = true;
+        return;
+    }
+    cart.dataset.cartEmpty = false;
+    cartCount.textContent = `(${CartStore.qty})`;
+    cartTotal.textContent = `$${CartStore.total.toFixed(2)}`;
+    cartList.innerHTML = "";
+    CartStore.items.forEach((item) =>
+        cartList.appendChild(renderCartItem(item))
+    );
+}
 
 function renderProduct(product) {
     const { image, name, category, price } = product;
@@ -100,35 +153,42 @@ function renderProduct(product) {
         ".sr-only"
     ).textContent = `Increase Quantity of ${name}`;
 
+    if (!product.qty || product.qty == 0) {
+        item.setAttribute("aria-selected", false);
+    } else {
+        item.setAttribute("aria-selected", true);
+    }
+
+    qty.textContent = product.qty ?? 0;
+
     addBtn.setAttribute("aria-label", `Add ${name} to cart`);
 
     addBtn.addEventListener("click", () => {
         product = CartStore.addItem(product);
-        item.setAttribute("aria-selected", true);
-        qty.textContent = product.qty;
     });
 
     decBtn.addEventListener("click", () => {
         CartStore.decreaseQty(product);
-        qty.textContent = product.qty;
-        if (product.qty == 0) {
-            item.setAttribute("aria-selected", false);
-        }
     });
 
     incBtn.addEventListener("click", () => {
         CartStore.increaseQty(product);
-        qty.textContent = product.qty;
     });
 
     return item;
 }
 
-(async () => {
-    await ProductStore.fetchProducts();
-    console.log(ProductStore.products);
-
+function renderProductList() {
+    productsList.innerHTML = "";
     ProductStore.products.forEach((data) =>
         productsList.appendChild(renderProduct(data))
     );
+}
+
+(async () => {
+    await ProductStore.fetchProducts();
+    renderProductList();
+    renderCart();
+    CartStore.addCB(renderCart);
+    CartStore.addCB(renderProductList);
 })();

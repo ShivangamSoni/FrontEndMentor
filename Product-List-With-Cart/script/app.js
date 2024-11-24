@@ -15,9 +15,15 @@ tailwind.config = {
                     },
                 },
             },
-        },
-        fontFamily: {
-            primary: ["Red Hat Text", "sans-serif"],
+            fontFamily: {
+                primary: ["Red Hat Text", "sans-serif"],
+            },
+            gridTemplateColumns: {
+                app: "2fr 1fr",
+            },
+            gridTemplateRows: {
+                app: "auto 1fr",
+            },
         },
     },
 };

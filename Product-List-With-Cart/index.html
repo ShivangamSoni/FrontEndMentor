@@ -9,17 +9,35 @@
             sizes="32x32"
             href="./assets/images/favicon-32x32.png"
         />
+
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Font: "Red Hat Text", sans-serif -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script src="./script/app.js" defer></script>
         <title>Frontend Mentor | Product list with cart</title>
     </head>
-    <body>
-        <main>
-            <h1>Desserts</h1>
+    <body
+        class="font-primary font-normal antialiased bg-primary-rose-50 text-primary-rose-900"
+    >
+        <main class="min-h-screen p-6">
+            <h1 class="text-4xl font-bold mb-8">Desserts</h1>
 
-            <div>
+            <div class="space-y-6">
                 <section aria-labelledby="products-heading">
-                    <h2 id="products-heading">Available Desserts</h2>
-                    <ul>
-                        <li>
+                    <h2 id="products-heading" class="sr-only">
+                        Available Desserts
+                    </h2>
+                    <ul class="space-y-6">
+                        <li class="grid group" aria-selected="true">
                             <picture>
                                 <source
                                     srcset="
@@ -36,16 +54,27 @@
                                 <img
                                     src="./assets/images/image-waffle-mobile.jpg"
                                     alt=""
+                                    class="rounded-lg group-aria-selected:outline group-aria-selected:outline-2 group-aria-selected:outline-primary-red"
                                 />
                             </picture>
 
-                            <div>
-                                <p>Waffle</p>
-                                <h3>Waffel with Berries</h3>
-                                <p aria-label="Price: $6.50">$6.50</p>
+                            <div class="order-last">
+                                <p class="text-primary-rose-500 text-sm">
+                                    Waffle
+                                </p>
+                                <h3 class="font-semibold">
+                                    Waffel with Berries
+                                </h3>
+                                <p
+                                    class="text-primary-red font-semibold"
+                                    aria-label="Price: $6.50"
+                                >
+                                    $6.50
+                                </p>
                             </div>
 
                             <button
+                                class="flex items-center justify-center gap-1 justify-self-center py-3 px-6 rounded-full -translate-y-1/2 bg-white outline outline-1 outline-primary-rose-300 font-semibold text-sm group-aria-selected:hidden"
                                 aria-label="Add Waffel with Berries to cart"
                             >
                                 <img
@@ -54,22 +83,182 @@
                                 />
                                 Add to Cart
                             </button>
+
+                            <div
+                                class="hidden group-aria-selected:flex items-center justify-center gap-1 justify-self-center p-3 rounded-full -translate-y-1/2 bg-primary-red font-semibold text-sm text-white"
+                                aria-label="Add Waffel with Berries to cart"
+                            >
+                                <button
+                                    class="border border-2 border-white p-1 rounded-full"
+                                >
+                                    <span class="sr-only">
+                                        Decrease Quantity of Waffel with Berries
+                                    </span>
+                                    <svg
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="10"
+                                        height="10"
+                                        fill="none"
+                                        viewBox="0 0 10 2"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M0 .375h10v1.25H0V.375Z"
+                                        />
+                                    </svg>
+                                </button>
+                                <span
+                                    aria-live="polite"
+                                    class="w-16 text-center"
+                                    >1</span
+                                >
+                                <button
+                                    class="border border-2 border-white p-1 rounded-full"
+                                >
+                                    <span class="sr-only">
+                                        Increase Quantity of Waffel with Berries
+                                    </span>
+                                    <svg
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="10"
+                                        height="10"
+                                        fill="none"
+                                        viewBox="0 0 10 10"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </li>
+
+                        <li class="grid group" aria-selected="false">
+                            <picture>
+                                <source
+                                    srcset="
+                                        ./assets/images/image-waffle-desktop.jpg
+                                    "
+                                    media="(min-width: 1024px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./assets/images/image-waffle-tablet.jpg
+                                    "
+                                    media="(min-width: 768px)"
+                                />
+                                <img
+                                    src="./assets/images/image-waffle-mobile.jpg"
+                                    alt=""
+                                    class="rounded-lg group-aria-selected:outline group-aria-selected:outline-2 group-aria-selected:outline-primary-red"
+                                />
+                            </picture>
+
+                            <div class="order-last">
+                                <p class="text-primary-rose-500 text-sm">
+                                    Waffle
+                                </p>
+                                <h3 class="font-semibold">
+                                    Waffel with Berries
+                                </h3>
+                                <p
+                                    class="text-primary-red font-semibold"
+                                    aria-label="Price: $6.50"
+                                >
+                                    $6.50
+                                </p>
+                            </div>
+
+                            <button
+                                class="flex items-center justify-center gap-1 justify-self-center py-3 px-6 rounded-full -translate-y-1/2 bg-white outline outline-1 outline-primary-rose-300 font-semibold text-sm group-aria-selected:hidden"
+                                aria-label="Add Waffel with Berries to cart"
+                            >
+                                <img
+                                    src="./assets/images/icon-add-to-cart.svg"
+                                    alt=""
+                                />
+                                Add to Cart
+                            </button>
+
+                            <div
+                                class="hidden group-aria-selected:flex items-center justify-center gap-1 justify-self-center p-3 rounded-full -translate-y-1/2 bg-primary-red font-semibold text-sm text-white"
+                                aria-label="Add Waffel with Berries to cart"
+                            >
+                                <button
+                                    class="border border-2 border-white p-1 rounded-full"
+                                >
+                                    <span class="sr-only">
+                                        Decrease Quantity of Waffel with Berries
+                                    </span>
+                                    <svg
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="10"
+                                        height="10"
+                                        fill="none"
+                                        viewBox="0 0 10 2"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M0 .375h10v1.25H0V.375Z"
+                                        />
+                                    </svg>
+                                </button>
+                                <span
+                                    aria-live="polite"
+                                    class="w-20 text-center"
+                                    >1</span
+                                >
+                                <button
+                                    class="border border-2 border-white p-1 rounded-full"
+                                >
+                                    <span class="sr-only">
+                                        Increase Quantity of Waffel with Berries
+                                    </span>
+                                    <svg
+                                        aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="10"
+                                        height="10"
+                                        fill="none"
+                                        viewBox="0 0 10 10"
+                                    >
+                                        <path
+                                            fill="currentColor"
+                                            d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
                         </li>
                     </ul>
                 </section>
 
-                <section aria-labelledby="cart-heading">
-                    <h2 id="cart-heading">
+                <section
+                    class="bg-white p-6 rounded-xl shadow-lg shadow-primary-rose-100 space-y-6"
+                    aria-labelledby="cart-heading"
+                >
+                    <h2
+                        id="cart-heading"
+                        class="text-2xl text-primary-red font-bold"
+                    >
                         Your Cart
                         <span id="cart-count" aria-live="polite">(0)</span>
                     </h2>
 
-                    <div>
+                    <div
+                        class="flex flex-col items-center justify-center gap-3"
+                    >
                         <img
                             src="./assets/images/illustration-empty-cart.svg"
                             alt=""
                         />
-                        <p>Your added items will appear here</p>
+                        <p class="font-semibold text-primary-rose-500">
+                            Your added items will appear here
+                        </p>
                     </div>
                 </section>
             </div>

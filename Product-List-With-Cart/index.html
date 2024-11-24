@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Font: "Red Hat Text", sans-serif -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script src="./script/app.js" defer></script>
+        <title>Frontend Mentor | Product list with cart</title>
+    </head>
+    <body
+        class="font-primary font-normal antialiased bg-primary-rose-50 text-primary-rose-900"
+    >
+        <main
+            class="min-h-screen max-w-screen-xl mx-auto p-6 md:py-24 md:px-10 space-y-6 md:space-y-0 md:grid md:grid-cols-app md:grid-rows-app md:gap-x-8"
+        >
+            <h1 class="text-4xl font-bold mb-8">Desserts</h1>
+            <section aria-labelledby="products-heading" class="md:row-start-2">
+                <h2 id="products-heading" class="sr-only">
+                    Available Desserts
+                </h2>
+                <ul
+                    class="products space-y-6 md:space-y-0 md:grid md:grid-cols-3 md:gap-8"
+                ></ul>
+            </section>
+            <section
+                class="cart group row-start1 row-span-2 bg-white p-6 rounded-xl shadow-lg shadow-primary-rose-100 space-y-6 md:self-start"
+                aria-labelledby="cart-heading"
+                data-cart-empty="true"
+            >
+                <h2
+                    id="cart-heading"
+                    class="text-2xl text-primary-red font-bold"
+                >
+                    Your Cart
+                    <span class="cart__count" aria-live="polite">(0)</span>
+                </h2>
+
+                <div
+                    class="hidden group-data-[cart-empty=true]:flex flex-col items-center justify-center gap-3"
+                >
+                    <img
+                        src="./assets/images/illustration-empty-cart.svg"
+                        alt=""
+                    />
+                    <p class="font-semibold text-primary-rose-500">
+                        Your added items will appear here
+                    </p>
+                </div>
+
+                <ul
+                    class="cart__list group-data-[cart-empty=true]:hidden divide-y divide-primary-rose-100 border-b border-b-primary-rose-100"
+                ></ul>
+
+                <p
+                    class="group-data-[cart-empty=true]:hidden flex items-center justify-between"
+                >
+                    <span>Order Total</span>
+                    <span class="cart__total text-2xl font-bold"></span>
+                </p>
+
+                <p
+                    class="group-data-[cart-empty=true]:hidden flex items-center justify-center gap-2 p-3 rounded-lg bg-primary-rose-100"
+                >
+                    <img src="./assets/images/icon-carbon-neutral.svg" alt="" />
+                    <span>
+                        This is a
+                        <span class="font-semibold">carbon-neutral</span>
+                        delivery
+                    </span>
+                </p>
+
+                <button
+                    class="cart__btn group-data-[cart-empty=true]:hidden w-full rounded-full p-4 bg-primary-red text-white outline-none hover:brightness-90 focus-visible:brightness-90 transition-all"
+                >
+                    Confirm Order
+                </button>
+            </section>
+        </main>
+
+        <div
+            role="dialog"
+            aria-hidden="true"
+            aria-labelledby="summary_title"
+            aria-describedby="summary_sub_title"
+            class="summary group visible aria-hidden:invisible w-full h-full fixed top-0 left-0 flex items-end md:items-center justify-center backdrop-brightness-50"
+        >
+            <article
+                class="w-full max-w-xl max-h-[90vh] bg-white p-8 rounded-tr-xl rounded-tl-xl md:rounded-xl space-y-8 group-aria-hidden:translate-y-20 group-aria-hidden:opacity-50 transition-all duration-250"
+            >
+                <img src="./assets/images/icon-order-confirmed.svg" alt="" />
+
+                <div>
+                    <h2 id="summary_title" class="text-4xl font-bold mb-2">
+                        Order Confirmed
+                    </h2>
+                    <p id="summary_sub_title" class="text-primary-rose-500">
+                        We hope you enjoy your food!
+                    </p>
+                </div>
+
+                <div class="bg-primary-rose-50 p-4 rounded-lg">
+                    <ul
+                        class="summary__list max-h-[50vh] overflow-y-scroll divide-y divide-primary-rose-100 border-b border-b-primary-rose-100"
+                    ></ul>
+
+                    <p class="flex items-center justify-between mt-4">
+                        <span>Order Total</span>
+                        <span class="summary__total text-2xl font-bold"
+                            >$46.50</span
+                        >
+                    </p>
+                </div>
+
+                <button
+                    class="summary__btn group-data-[cart-empty=true]:hidden w-full rounded-full p-4 bg-primary-red text-white outline-none hover:brightness-90 focus-visible:brightness-90 transition-all"
+                >
+                    Start New Order
+                </button>
+            </article>
+        </div>
+
+        <template id="product-item-template">
+            <li class="grid group" aria-selected="false">
+                <picture>
+                    <source
+                        class="product__desktop"
+                        srcset=""
+                        media="(min-width: 1024px)"
+                    />
+                    <source
+                        class="product__tablet"
+                        srcset=""
+                        media="(min-width: 768px)"
+                    />
+                    <img
+                        src=""
+                        alt=""
+                        class="product__mobile rounded-lg group-aria-selected:outline group-aria-selected:outline-2 group-aria-selected:outline-primary-red transition-all"
+                    />
+                </picture>
+
+                <div class="order-last">
+                    <p class="product__tag text-primary-rose-500 text-sm"></p>
+                    <h3 class="product__title font-semibold"></h3>
+                    <p
+                        class="product__price text-primary-red font-semibold"
+                        aria-label="Price: "
+                    ></p>
+                </div>
+
+                <button
+                    class="product__add group-aria-selected:hidden flex items-center justify-center gap-1 justify-self-center py-3 px-6 rounded-full -translate-y-1/2 bg-white outline outline-1 outline-primary-rose-300 font-semibold text-sm transition-all hover:outline-primary-red hover:text-primary-red focus-visible:outline-primary-red focus-visible:text-primary-red"
+                    aria-label=""
+                >
+                    <img src="./assets/images/icon-add-to-cart.svg" alt="" />
+                    Add to Cart
+                </button>
+
+                <div
+                    class="hidden group-aria-selected:flex items-center justify-center gap-1 justify-self-center p-3 rounded-full -translate-y-1/2 bg-primary-red font-semibold text-sm text-white"
+                >
+                    <button
+                        class="product__dec outline-none border border-2 border-current p-1 rounded-full hover:bg-white hover:text-primary-red focus-visible:bg-white focus-visible:text-primary-red transition-all"
+                    >
+                        <span class="sr-only"> </span>
+                        <svg
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="10"
+                            height="10"
+                            fill="none"
+                            viewBox="0 0 10 2"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M0 .375h10v1.25H0V.375Z"
+                            />
+                        </svg>
+                    </button>
+                    <span
+                        aria-live="polite"
+                        class="product__qty w-16 text-center"
+                        >0</span
+                    >
+                    <button
+                        class="product__inc outline-none border border-2 border-current p-1 rounded-full hover:bg-white hover:text-primary-red focus-visible:bg-white focus-visible:text-primary-red transition-all"
+                    >
+                        <span class="sr-only"></span>
+                        <svg
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="10"
+                            height="10"
+                            fill="none"
+                            viewBox="0 0 10 10"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </li>
+        </template>
+
+        <template id="cart-item-template">
+            <li class="flex items-center justify-between gap-3 py-4">
+                <div>
+                    <span class="item__name block font-semibold mb-2"></span>
+                    <div class="space-x-3">
+                        <span class="item__qty text-primary-red"></span>
+                        <span class="item__price text-primary-rose-400"></span>
+                        <span
+                            class="item__total font-semibold text-primary-rose-500"
+                            aria-label="Total Price"
+                        ></span>
+                    </div>
+                </div>
+                <button
+                    class="item__remove outline-none border border-2 border-current p-1 rounded-full text-primary-rose-300 hover:text-primary-rose-500 focus-visible:text-primary-rose-500 transition-color"
+                >
+                    <span class="sr-only"></span>
+                    <svg
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="10"
+                        fill="none"
+                        viewBox="0 0 10 10"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+                        />
+                    </svg>
+                </button>
+            </li>
+        </template>
+
+        <template id="summary-item-template">
+            <li class="flex items-center justify-start gap-3 py-4">
+                <img src="" alt="" class="item__thumb rounded-lg w-16 h-16" />
+                <div class="w-full self-stretch flex flex-col justify-between">
+                    <span class="item__name font-semibold"></span>
+                    <div class="space-x-3">
+                        <span class="item__qty text-primary-red"></span>
+                        <span class="item__price text-primary-rose-400"></span>
+                    </div>
+                </div>
+                <span
+                    class="item__total font-semibold text-primary-rose-500"
+                    aria-label="Total Price"
+                ></span>
+            </li>
+        </template>
+    </body>
+</html>

@@ -30,6 +30,7 @@ tailwind.config = {
 
 const productItemTemplate = document.querySelector("#product-item-template");
 const cartItemTemplate = document.querySelector("#cart-item-template");
+const summaryItemTemplate = document.querySelector("#summary-item-template");
 
 const productsList = document.querySelector(".products");
 const cart = document.querySelector(".cart");
@@ -37,6 +38,10 @@ const cartCount = document.querySelector(".cart__count");
 const cartList = document.querySelector(".cart__list");
 const cartTotal = document.querySelector(".cart__total");
 const cartBtn = document.querySelector(".cart__btn");
+const summary = document.querySelector(".summary");
+const summaryList = document.querySelector(".summary__list");
+const summaryTotal = document.querySelector(".summary__total");
+const summaryBtn = document.querySelector(".summary__btn");
 
 const ProductStore = {
     products: null,
@@ -92,7 +97,45 @@ const CartStore = {
         this.invokeCBs();
         return product;
     },
+    clearCart() {
+        this.items.forEach((item) => (item.qty = 0));
+        this.items = [];
+        this.total = 0;
+        this.qty = 0;
+        this.invokeCBs();
+    },
 };
+
+function renderSummaryItem(product) {
+    const {
+        image: { thumbnail },
+        name,
+        qty,
+        price,
+    } = product;
+    const item = summaryItemTemplate.content.cloneNode(true);
+    item.querySelector(".item__thumb").setAttribute("src", thumbnail);
+    item.querySelector(".item__name").textContent = name;
+    item.querySelector(".item__qty").textContent = `${qty}x`;
+    item.querySelector(".item__price").textContent = `@ $${price.toFixed(2)}`;
+    item.querySelector(".item__total").textContent = `$${(qty * price).toFixed(
+        2
+    )}`;
+    return item;
+}
+
+function renderSummary() {
+    summaryList.innerHTML = "";
+    CartStore.items.forEach((item) =>
+        summaryList.appendChild(renderSummaryItem(item))
+    );
+    summaryTotal.textContent = `$${CartStore.total.toFixed(2)}`;
+    summary.setAttribute("aria-hidden", false);
+    summaryBtn.addEventListener("click", () => {
+        summary.setAttribute("aria-hidden", true);
+        CartStore.clearCart();
+    });
+}
 
 function renderCartItem(product) {
     const { name, price, qty } = product;
@@ -114,17 +157,21 @@ function renderCartItem(product) {
 }
 
 function renderCart() {
+    cartCount.textContent = `(${CartStore.qty})`;
     if (CartStore.items.length == 0) {
         cart.dataset.cartEmpty = true;
         return;
     }
     cart.dataset.cartEmpty = false;
-    cartCount.textContent = `(${CartStore.qty})`;
     cartTotal.textContent = `$${CartStore.total.toFixed(2)}`;
     cartList.innerHTML = "";
     CartStore.items.forEach((item) =>
         cartList.appendChild(renderCartItem(item))
     );
+
+    cartBtn.addEventListener("click", () => {
+        renderSummary();
+    });
 }
 
 function renderProduct(product) {
